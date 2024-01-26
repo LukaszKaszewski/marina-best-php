@@ -13,7 +13,7 @@ class Place
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
+    #[ORM\Column(length: 10, unique: true)]
     private ?int $number = null;
 
     #[ORM\Column(length: 10)]

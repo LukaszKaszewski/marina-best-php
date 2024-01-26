@@ -5,28 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d79ad6-8432-4ed2-b3c9-46d20e4751d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20240125224852.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20240125230125.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20240125230309.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20240125230402.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20240125230646.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/PlaceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Boats.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Place.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/BoatsRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/PlaceRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/place/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20240126215241.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c951158a-100e-4c28-a35a-730237437426.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c951158a-100e-4c28-a35a-730237437426.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240125224852.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240125230125.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240125230309.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240125230402.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240125230646.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20240126213809.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Place.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Place.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,6 +230,7 @@
       <workItem from="1706127093609" duration="1198000" />
       <workItem from="1706213422926" duration="1888000" />
       <workItem from="1706222390866" duration="1689000" />
+      <workItem from="1706302065141" duration="3751000" />
     </task>
     <servers />
   </component>
