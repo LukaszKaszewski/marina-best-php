@@ -2,6 +2,23 @@
 
 {% block body %}
 <body>
+
+
+
+<!-- header and main site -->
+<header class="header section">
+    <h1 class="header__heading">Marina B E S T</h1>
+    <p class="header__text">Wyjątkowe miejsce na Twoje wyjątkowe wakacje</p>
+    <a href="#offers" class="header__btn btn-special-animation"
+    >Nasza oferta</a
+    >
+    <!-- <div class="white-block white-block-left"></div> -->
+</header>
+
+
+
+
+
 <main class="main">
     <section class="offer section-padding section white-section" id="offer">
         <div class="wrapper">
@@ -10,7 +27,7 @@
             <div class="offers__box">
                 <div class="offers__box-img offers__box-img--right">
                     <img
-                            src="./img/houseboat_1280.jpg"
+                            src="{{ asset('assets/img/houseboat_1280.jpg') }}"
                             alt="houseboat na wynajem"
                             class="offers__img"
                     />
@@ -30,7 +47,7 @@
             <div class="offers__box">
                 <div class="offers__box-img">
                     <img
-                            src="./img/opti_1280.jpg"
+                            src="{{ asset('assets/img/opti_1280.jpg') }}"
                             alt="jacht klasy opti"
                             class="offers__img"
                     />
@@ -147,7 +164,7 @@
             <div class="news__box">
                 <div class="news__option">
                     <img
-                            src="img/sea_640.jpg"
+                            src="./{{ asset('assets/img/sea_640.jpg') }}"
                             alt="dzien dziecka"
                             class="news__option-img"
                     />
@@ -171,7 +188,7 @@
                 </div>
                 <div class="news__option">
                     <img
-                            src="img/jetty_640.jpg"
+                            src="{{ asset('assets/img/jetty_640.jpg') }}"
                             alt="dzien dziecka"
                             class="news__option-img news__option-img--right"
                     />
@@ -195,7 +212,7 @@
                 </div>
                 <div class="news__option">
                     <img
-                            src="img/kids_day_640.jpg"
+                            src="{{ asset('assets/img/kids_day_640.jpg') }}"
                             alt="dzien dziecka"
                             class="news__option-img"
                     />
