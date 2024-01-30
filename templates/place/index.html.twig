@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PlaceController!{% endblock %}
+
+{% block body %}
+
+    <!-- header and main site -->
+    <div class="place">
+        <div class="place__info">
+            <p>Miejsca małe - numery od 1 do 40</p>
+            <p>Miejsca duże - numery od 41 do 90</p>
+            <p>Miejsca oversize - numery od 91 do 92</p>
+        </div>
+
+
+        <div class="place__form">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="contact__form-btn btn-special-animation">Wyślij</button>
+        {{ form_end(form) }}
+        </div>
+
+        {# wyświetla błedy daty, start pozniej niz koniec#}
+        {% for flashError in app.flashes('error') %}
+            <div class="flash-error">
+                {{ flashError }}
+            </div>
+        {% endfor %}
+
+        {# pokazuje wolne miejsca#}
+        <div class="place__result">
+            {% for number in places %}
+                <li>Miejsce: {{ number }}</li>
+            {% endfor %}
+        </div>
+{#test#}
+    </div>
+{% endblock %}
