@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d79ad6-8432-4ed2-b3c9-46d20e4751d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20240126215241.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c951158a-100e-4c28-a35a-730237437426.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c951158a-100e-4c28-a35a-730237437426.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240125224852.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240125230125.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240125230309.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240125230402.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240125230646.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20240126213809.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Place.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Place.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+>>>>>>> e5013eb6b8c81c84604e5b8b3319ba00fb869302
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,11 +232,16 @@
       <workItem from="1705843132358" duration="4632000" />
       <workItem from="1706127093609" duration="1198000" />
       <workItem from="1706213422926" duration="1888000" />
+<<<<<<< HEAD
       <workItem from="1706396461194" duration="4775000" />
       <workItem from="1706401308273" duration="1342000" />
       <workItem from="1706472345013" duration="10766000" />
       <workItem from="1706561116132" duration="9671000" />
       <workItem from="1706643073578" duration="1153000" />
+=======
+      <workItem from="1706222390866" duration="1689000" />
+      <workItem from="1706302065141" duration="3751000" />
+>>>>>>> e5013eb6b8c81c84604e5b8b3319ba00fb869302
     </task>
     <servers />
   </component>

@@ -45,6 +45,7 @@ class PlaceRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+<<<<<<< HEAD
     public function findByIsTaken($sd, $ed)
     {
         // wyszukiwanie zajętych pozycji
@@ -72,4 +73,6 @@ class PlaceRepository extends ServiceEntityRepository
 
         return $availablePlaces;
     }
+=======
+>>>>>>> e5013eb6b8c81c84604e5b8b3319ba00fb869302
 }
