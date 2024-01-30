@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-<<<<<<< HEAD
 use App\Entity\Place;
 use App\Repository\PlaceRepository;
 
@@ -12,16 +11,10 @@ use Symfony\Component\HttpFoundation\Response; // do request
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\PlaceType;
 use function Symfony\Component\Clock\now;
-=======
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
->>>>>>> e5013eb6b8c81c84604e5b8b3319ba00fb869302
 
 class PlaceController extends AbstractController
 {
     #[Route('/place', name: 'app_place')]
-<<<<<<< HEAD
     public function index(Request $request, PlaceRepository $placeRepository): Response
     {
         $form = $this->createForm(PlaceType::class);
@@ -53,12 +46,3 @@ class PlaceController extends AbstractController
         ]);
     }
 }
-=======
-    public function index(): Response
-    {
-        return $this->render('place/index.html.twig', [
-            'controller_name' => 'PlaceController',
-        ]);
-    }
-}
->>>>>>> e5013eb6b8c81c84604e5b8b3319ba00fb869302
