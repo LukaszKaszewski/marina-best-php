@@ -47,21 +47,28 @@
         <div class="burger-btn__icon"></div>
     </div>
 
-    {% if is_granted('ROLE_USER') %}
-        <a href="{{ path('app_logout') }}">Logout</a>
-    {% else %}
-        <a href="{{ path('app_login') }}">Login</a>
-    {% endif %}
+
+
+
+
 
     <!-- nav -->
     <nav class="nav">
-        <a href="/#offer" class="nav__item nav__btn1">Oferta</a>
-        <a href="/#marina-data" class="nav__item nav__btn2">Dane nt mariny</a>
-        <a href="/#price-list" class="nav__item nav__btn3">Cennik</a>
-        <a href="/#news" class="nav__item nav__btn4">Aktualności</a>
-        <a href="/#contact" class="nav__item nav__btn5">Kontakt</a>
-        <a href="/login" class="nav__item nav__btn6">Logowanie</a>
-        <a href="{{ path('app_place') }}" class="nav__item nav__btn7">Wolne miejsca</a>
+        {% if is_granted('ROLE_USER') %}
+            <a href="{{ path('app_panel') }}" class="nav__item nav__btn1">Panel użytkownika</a>
+            <a href="{{ path('app_index') }}" class="nav__item nav__btn2">Strona główna</a>
+            <a href="tel:+48501501501" class="nav__item nav__btn3">Kontakt telefoniczny</a>
+            <a href="/#contact" class="nav__item nav__btn4">Kontakt</a>
+            <a href="{{ path('app_logout') }}" class="nav__item nav__btn5">Wyloguj się</a>
+        {% else %}
+            <a href="{{ path('app_login') }}" class="nav__item nav__btn1">Logowanie</a>
+            <a href="/#offer" class="nav__item nav__btn2">Oferta</a>
+            <a href="/#marina-data" class="nav__item nav__btn3">Dane nt mariny</a>
+            <a href="/#price-list" class="nav__item nav__btn4">Cennik</a>
+            <a href="/#news" class="nav__item nav__btn5">Aktualności</a>
+
+        {% endif %}
+        <a href="{{ path('app_place') }}" class="nav__item nav__btn6">Wolne miejsca</a>
     </nav>
 
 
