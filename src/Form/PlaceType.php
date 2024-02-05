@@ -4,8 +4,10 @@ namespace App\Form;
 
 use App\Entity\Place;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class PlaceType extends AbstractType
 {
@@ -14,8 +16,17 @@ class PlaceType extends AbstractType
         $builder
 //            ->add('number')
 //            ->add('size')
-            ->add('start_date')
-            ->add('end_date')
+            ->add('start_date', DateType::class, [
+                'format' => 'dd MMMM y', // Ustaw format daty
+                'label' => 'Data początkowa', // Ustaw etykietę pola
+                'attr' => ['class' => 'datepicker'], // Dodaj klasę, jeśli potrzebujesz stylizacji
+
+            ])
+            ->add('end_date', DateType::class, [
+                'format' => 'dd MMMM y', // Ustaw format daty
+                'label' => 'Data zakończenia postoju', // Ustaw etykietę pola
+                'attr' => ['class' => 'datepicker'], // Dodaj klasę, jeśli potrzebujesz stylizacji
+            ]);
         ;
     }
 

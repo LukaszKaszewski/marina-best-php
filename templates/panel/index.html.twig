@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %}Hello PanelController!{% endblock %}
+
+
+
+{% block body %}
+    <!-- header and main site -->
+    <div class="place">
+        <h2>Witaj {{ user.username }}</h2>
+        <nav class="navPanel">
+            <ul class="navPanel__items">
+                <li><a href='#' data-item='rezerwuj'>rezerwuj</a></li>
+                <li><a href='#' data-item='edytuj'>edytuj</a></li>
+                <li><a href='#' data-item='zamów'>zamów</a></li>
+            </ul>
+        </nav>
+
+
+    </div>
+
+
+
+
+
+
+
+
+{% endblock %}

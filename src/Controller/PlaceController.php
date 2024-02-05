@@ -26,13 +26,19 @@ class PlaceController extends AbstractController
             $data = $form->getData();
             $startDate = $data->getStartDate();
             $endDate = $data->getEndDate();
+            $currentDate = now(); // today
+//            $yesterday = (new \DateTime())->modify('-1 day'); // yesterday date
 
             // szuka wolnych miejsc w repo i sprawdze bledy w formularzu
             if ($startDate > $endDate) {
                 $this->addFlash('error', 'Data początkowa nie może być większa od daty końcowej');
-//              var_dump('Data początkowa nie może być większa od daty końcowej');
+                // var_dump('Data początkowa nie może być większa od daty końcowej');
             } elseif ($startDate == null || $endDate == null) {
                 $this->addFlash('error', 'Data początkowa i końcowa nie mogą być puste');
+                // var_dump('Data początkowa i końcowa nie mogą być puste');
+            } elseif ($startDate < $currentDate || $endDate < $currentDate) {
+                $this->addFlash('error', 'Nie można wybrać daty wcześniejszej niż dzisiejsza');
+                // var_dump('Nie można wybrać daty wcześniejszej niż dzisiejsza');
             } else {
                 $places = $placeRepository->findByIsTaken($startDate, $endDate);
             }
