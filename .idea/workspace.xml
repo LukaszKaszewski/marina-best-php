@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d79ad6-8432-4ed2-b3c9-46d20e4751d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20240212205019.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c951158a-100e-4c28-a35a-730237437426.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c951158a-100e-4c28-a35a-730237437426.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PanelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/panel/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/panel/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +251,14 @@
       <workItem from="1707138506291" duration="1180000" />
       <workItem from="1707140752358" duration="3655000" />
       <workItem from="1707168040070" duration="3547000" />
-      <workItem from="1707171614608" duration="3028000" />
+      <workItem from="1707171614608" duration="3593000" />
+      <workItem from="1707175401028" duration="37000" />
+      <workItem from="1707221410124" duration="1307000" />
+      <workItem from="1707328910917" duration="583000" />
+      <workItem from="1707683496280" duration="53000" />
+      <workItem from="1707683564001" duration="2079000" />
+      <workItem from="1707687808094" duration="1548000" />
+      <workItem from="1707769105253" duration="6000000" />
     </task>
     <servers />
   </component>

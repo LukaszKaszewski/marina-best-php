@@ -12,6 +12,9 @@
         <h2>Witaj {{ user.username }}</h2>
         <nav class="navPanel">
             <ul class="navPanel__items">
+                {% if is_granted('ROLE_ADMIN') %}
+                <li><a href='#' data-item='dodaj'>dodaj</a></li>
+                {% endif %}
                 <li><a href='#' data-item='rezerwuj'>rezerwuj</a></li>
                 <li><a href='#' data-item='edytuj'>edytuj</a></li>
                 <li><a href='#' data-item='zamów'>zamów</a></li>
