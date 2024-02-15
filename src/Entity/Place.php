@@ -31,6 +31,9 @@ class Place
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?boat $boat = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -94,6 +97,18 @@ class Place
     public function setUserId(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getBoat(): ?boat
+    {
+        return $this->boat;
+    }
+
+    public function setBoat(?boat $boat): static
+    {
+        $this->boat = $boat;
 
         return $this;
     }
