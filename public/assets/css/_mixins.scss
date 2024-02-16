@@ -1,0 +1,17 @@
+@use "./colors" as *;
+
+
+@mixin heroImages($bgImg) {
+	background-image: $dark-gradient, url($bgImg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+@mixin contactArea {
+	margin-bottom: 2em;
+	padding: 0.5em 1.1em;
+	border: none; // 
+	border-radius: 8px;
+	font-size: 1.7rem;
+}

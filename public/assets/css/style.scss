@@ -1,0 +1,1074 @@
+@use "./colors" as *;
+@use "./components" as *;
+@use "./mixins" as *;
+
+//@font-face {
+//	font-family: BlackJack;
+//	src: url(../fonts/BLACKJAR.TTF);
+//}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	// font-family: 'Dancing Script', cursive;
+	// font-family: 'Open Sans', sans-serif;
+	font-family: "Roboto", sans-serif;
+	font-size: 1.6rem;
+	// position: relative;
+}
+
+// navigo
+
+.burger-btn {
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	top: 20px;
+	right: 20px;
+	transition-duration: 0.5s;
+	z-index: 100;
+
+	&__circle {
+		transition-duration: 0.5s;
+		position: absolute;
+		height: 60px;
+		width: 60px;
+		top: 2px;
+		border-radius: 100%;
+		background: transparent;
+		border: 4px solid whitesmoke;
+		left: -15px;
+	}
+
+	&__icon {
+		transition-duration: 0.5s;
+		position: absolute;
+		height: 4px;
+		width: 30px;
+		top: 30px;
+		background-color: whitesmoke;
+		border-radius: 4px;
+
+		&:before {
+			transition-duration: 0.5s;
+			position: absolute;
+			width: 30px;
+			height: 4px;
+			background-color: whitesmoke;
+			content: "";
+			top: -10px;
+			border-radius: 4px;
+		}
+
+		&:after {
+			transition-duration: 0.5s;
+			position: absolute;
+			width: 30px;
+			height: 4px;
+			background-color: whitesmoke;
+			content: "";
+			top: 10px;
+			border-radius: 4px;
+		}
+	}
+
+	&--open {
+		.burger-btn__icon {
+			transition-duration: 0.5s;
+			background: transparent;
+
+			&:before {
+				transform: rotateZ(-45deg) scaleX(-1.25) translate(6.5px, 6.5px);
+			}
+
+			&:after {
+				transform: rotateZ(45deg) scaleX(-1.25) translate(6px, -6px);
+			}
+		}
+	}
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-image: $blue-gradient-solid;
+	transform: translateX(100%);
+	transition: transform 0.5s;
+	z-index: 90;
+
+	&--active {
+		transform: translateX(0%);
+	}
+
+	&__item {
+		position: relative;
+		display: block;
+		margin: 0.5em;
+		padding: 0.5em 2em;
+		font-size: 2.8rem;
+		text-decoration: none;
+		color: $pure-white;
+		z-index: 0;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			height: 0;
+			width: 100%;
+			// border-bottom-left-radius: 5px;
+			// border-bottom-right-radius: 5px;
+			background-color: whitesmoke;
+			z-index: -1;
+			transition: height 0.5s;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 50%;
+			left: 0;
+			height: 0;
+			width: 100%;
+			// border-top-left-radius: 5px;
+			// border-top-right-radius: 5px;
+			background-color: whitesmoke;
+			z-index: -1;
+			transition: height 0.5s;
+		}
+
+		&:hover {
+			color: $secondary-color;
+		}
+
+		&:hover::before,
+		&:hover::after {
+			height: 50%;
+		}
+	}
+}
+
+@keyframes navigoAnimation {
+	from {
+		transform: translateX(200%); // -200%
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+.nav-items-anima {
+	animation: navigoAnimation 1s both;
+}
+
+// header
+
+.header {
+	position: relative;
+	display: flex;
+	top: 0;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2em;
+	height: 100vh; // 75
+	text-align: center;
+	color: $pure-white;
+	@include heroImages("../img/chiayi_port_640.jpg");
+	background-attachment: scroll;
+
+	&__heading {
+		font-family: "Dancing Script", cursive;
+		// font-family: BlackJack;
+		font-size: 3.5rem;
+		letter-spacing: 2px;
+		// font-weight: 700px;
+	}
+
+	&__text {
+		font-size: 1.1rem;
+	}
+
+	&__btn {
+		margin-top: 2em;
+		padding: 0.8em 1.6em;
+		font-size: 1.4rem;
+		background-color: $pure-white;
+		border: none;
+		border-radius: 8px;
+		color: $dark;
+		text-decoration: none;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&::before {
+			background-color: $light-white;
+		}
+	}
+}
+
+// weatherapp
+
+.weather-widget {
+	display: none;
+}
+
+// main section
+.section-heading {
+	position: relative;
+	margin-bottom: 2em;
+	font-size: 3rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: center;
+	color: $main-color;
+	letter-spacing: 2px;
+}
+
+.section-padding {
+	padding: 6em 2em;
+}
+
+// offer
+.offers {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin: 2em 0;
+	}
+
+	&__img {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	&__title {
+		margin-bottom: 0.5em;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+	}
+
+	&__img {
+		border-radius: 15px;
+	}
+}
+
+// about
+.hero-img {
+	position: relative;
+	padding: 10em 2em;
+	@include heroImages("../img/boats_640.jpg");
+	text-align: center;
+	color: $pure-white;
+
+	&__title {
+		font-family: "Dancing Script", cursive;
+		font-size: 4.8rem;
+		margin-bottom: 1em;
+	}
+
+	&__text {
+		padding: 1em;
+	}
+}
+
+// price list
+.price {
+	&__card {
+		position: relative;
+		margin: 1em 0;
+		height: 500px;
+		color: $pure-white;
+		text-align: center;
+		// pict depth
+		perspective: 1500px;
+
+		&:hover {
+			.price__card-img {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+
+			.price__card-info {
+				transform: rotateY(0);
+				opacity: 1;
+			}
+		}
+
+		&-img {
+			padding: 2em;
+			height: 100%;
+			border-radius: 6px;
+			background-size: cover;
+			transition: transform 1.5s, opacity 1.5s;
+			background-size: cover;
+			background-position: center;
+
+			&--first {
+				background-image: $dark-gradient, url("../img/price1a.jpg");
+			}
+
+			&--second {
+				background-image: $dark-gradient, url("../img/price2a.jpg");
+			}
+
+			&--third {
+				background-image: $dark-gradient, url("../img/price3a.jpg");
+			}
+
+			&--fourth {
+				background-image: $dark-gradient, url("../img/price4a.jpg");
+			}
+
+			&-title {
+				// tu chyba czcionka niebardzo
+				font-family: "Dancing Script", cursive;
+				font-size: 3rem;
+			}
+
+			&-info {
+				position: absolute;
+				bottom: 20px;
+				right: 35px;
+				font-size: 4rem;
+			}
+		}
+
+		&-info {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border-radius: 6px;
+			background-image: $dark-blue-gradient-solid;
+			transform: rotateY(180deg);
+			opacity: 0;
+			transition: transform 1.5s, opacity 1.5s;
+
+			&-title {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 1em;
+				font-family: "Dancing Script", cursive;
+				font-size: 3rem;
+			}
+
+			&-list {
+				margin: 0 auto;
+				width: 70%;
+				list-style: none;
+
+				&-item {
+					padding: 1em;
+					font-size: 1.4rem;
+					border-bottom: 1px solid $light-white;
+
+					&:last-child {
+						border-bottom: none;
+					}
+				}
+			}
+
+			&-btn {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 2em;
+				padding: 1.1em;
+				border-radius: 6px;
+				width: 75%;
+				border: none;
+				background-color: rgb(170, 9, 170);
+				cursor: pointer;
+
+				&::before {
+					background-color: yellow;
+				}
+			}
+		}
+	}
+}
+
+// news
+
+.news {
+	// position: relative;
+	@include heroImages("../img/news_640.jpg");
+
+	.section-heading {
+		color: $pure-white;
+	}
+
+	&__option {
+		margin: 1em 0;
+		box-shadow: 5px 5px 10px rgba(50, 50, 50, 0.16);
+		background-color: $pure-white;
+		overflow: hidden;
+		border-radius: 8px;
+
+		// ?? czy chce bawic sie w powiekszanie obrazka?
+		&-img {
+			width: 100%;
+			transition: transform 0.3s;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+		// ?? czy chce bawic sie w powiekszanie obrazka?
+
+		&-info {
+			padding: 2em;
+			background-color: #fff;
+			z-index: 15;
+		}
+
+		&-heading {
+			margin-bottom: 0.5em;
+			font-size: 2.4rem;
+			font-weight: 300; // ??
+		}
+
+		&-text {
+			margin-bottom: 0.5em;
+			font-size: 1.4rem;
+			color: $dark;
+		}
+
+		&-btn {
+			margin-top: 1rem;
+			padding: 0.9em;
+			width: 100%;
+			color: $pure-white;
+			background-color: $main-color;
+			border: none;
+			border-radius: 7px;
+			cursor: pointer;
+
+			&::before {
+				background-color: magenta;
+				color: black;
+			}
+		}
+	}
+}
+
+//contact
+
+.contact {
+	position: relative;
+	background-color: $light-white;
+	// overflow: hidden;
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form-top {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form-label {
+		margin-bottom: 0.4em;
+		text-transform: uppercase;
+	}
+
+	&__form-input {
+		@include contactArea;
+	}
+
+	&__form-area {
+		@include contactArea;
+		max-width: 100%;
+		width: 100%;
+		min-height: 175px;
+	}
+
+	&__form-btn {
+		align-self: center;
+		padding: 1em;
+		width: 100%;
+		max-width: 250px;
+		color: $pure-white;
+		border: none;
+		border-radius: 8px;
+		background-color: $main-color;
+		cursor: pointer;
+
+		&::before {
+			background-color: $dark;
+		}
+	}
+}
+
+
+// footer
+
+.footer {
+	color: $pure-white;
+	background-color: rgb(65, 65, 65);
+
+	.wrapper {
+		padding: 1em;
+	}
+
+	&__box {
+		font-size: 1.4rem;
+	}
+
+	&__box-desktop {
+		display: none;
+	}
+
+	&__box-title {
+		margin-bottom: 1em;
+		font-size: 3rem;
+	}
+
+	&__bottom-text {
+		text-align: center;
+	}
+}
+
+// /place
+.place {
+	position: relative;
+	display: flex;
+	top: 0;
+
+	align-items: center;
+	flex-direction: column;
+	padding: 2em;
+	//height: 75vh; // 100
+	text-align: center;
+	color: $pure-white;
+	@include heroImages("../img/chiayi_port_640.jpg");
+	background-attachment: scroll;
+
+	&__info {
+		font-size: 2rem;
+
+		p {
+			padding: 0.2em;
+		}
+	}
+
+	&__form {
+		padding: 2rem;
+	}
+
+	label {
+		font-size: 2.3rem;
+	}
+
+	#place_start_date,
+	#place_end_date {
+		min-width: 500px;
+		margin-top: 0.3em;
+		margin-bottom: 2em;
+	}
+
+	#place_start_date_day,
+	#place_start_date_month,
+	#place_start_date_year,
+	#place_end_date_day,
+	#place_end_date_month,
+	#place_end_date_year {
+		min-width: 75px;
+		max-width: 75px;
+		min-height: 25px;
+		max-height: 25px;
+		border-radius: 5px;
+	}
+
+	&__result {
+		width: 25em;
+		overflow: auto;
+		column-count: 2;
+		//column-gap: 30px; /* odstęp między kolumnami */
+
+		li {
+			list-style: none;
+			padding-bottom: 1.1em;
+		}
+	}
+}
+
+
+// register
+
+.title {
+	padding:1em 0;
+}
+
+.reg_form {
+	//display: block;
+	padding: 0.5em;
+	background-color: rgba(47, 40, 40, 0.75);
+
+	label {
+		display: flex;
+		justify-content: center;
+		color: $pure-white;
+	}
+
+	input {
+		display: flex;
+		border-radius: 7px;
+		min-width: 250px;
+		height: 2em;
+	}
+
+		//div {
+		//	display: flex;
+		//	width: 450px;
+		//	justify-content: space-between;
+		//}
+	//
+	&--terms div {
+		display: block;
+	//		width: 400px;
+	//		justify-content: space-evenly;
+		padding: 0.5em 0;
+	}
+}
+
+
+
+//login
+
+.login_form {
+	display: block;
+	padding: 0.5em;
+	background-color: rgba(47, 40, 40, 0.75);
+
+	label {
+		display: flex;
+		justify-content: center;
+		color: $pure-white;
+	}
+
+	input {
+		display: flex;
+		border-radius: 7px;
+		min-width: 250px;
+		height: 2em;
+	}
+}
+
+.spacer {
+	margin-top: 1em;
+	margin-bottom: 4em;
+}
+
+
+
+//.reg_form {
+//	padding: 0.5em;
+//	background-color: rgba(47, 40, 40, 0.75);
+//
+//	label {
+//		color: $pure-white;
+//	}
+//
+//	input {
+//		border-radius: 7px;
+//		width: 230px;
+//	}
+//
+//	div {
+//		display: flex;
+//		width: 450px;
+//		justify-content: space-between;
+//	}
+//
+//	&--terms div {
+//		display: flex;
+//		width: 400px;
+//		justify-content: space-evenly;
+//		padding: 0.5em 0;
+//	}
+//}
+
+
+// responsive
+
+@media (min-width: 576px) {
+	.header {
+		&__heading {
+			font-size: 4.8rem;
+		}
+
+		&__text {
+			font-size: 1.4rem;
+		}
+	}
+
+	.offers {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+
+			&-text {
+				width: 55%;
+				&--right {
+					text-align: right;
+				}
+			}
+
+			&-img {
+				width: 40%;
+
+				&--right {
+					order: 1;
+				}
+			}
+		}
+
+		&__img {
+			margin-bottom: 0;
+			max-height: 300px;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.burger-btn {
+		top: 130px;
+		right: 20px;
+	}
+
+	.sticky {
+		top: 30px;
+		right: 20px;
+	}
+
+	// .white-block {
+	// 	height: 50px;
+	// 	width: 45%;
+	// }
+
+	.header {
+		&__heading {
+			font-size: 6.6rem;
+		}
+
+		&__text {
+			font-size: 2.2rem;
+		}
+
+		&__btn {
+			font-size: 1.6rem;
+		}
+	}
+
+	.weather-widget {
+		display: block;
+	}
+
+	.section-heading {
+		font-size: 3.6rem;
+	}
+
+	.section-padding {
+		padding: 8em 2em;
+	}
+
+	.offers {
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
+
+	.hero-img {
+		padding: 30rem 2em;
+
+		hr {
+			margin: 0 auto;
+			width: 70%;
+		}
+	}
+
+	.price {
+		&__cards {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&__card {
+			margin: 1em;
+			width: 30%;
+		}
+	}
+
+	.news {
+		&__option {
+			display: flex;
+			margin: 2em 0;
+			width: 100%;
+
+			&-img {
+				width: 50%;
+				height: auto;
+
+				&--right {
+					order: 1;
+				}
+			}
+
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			&-heading {
+				font-size: 3.5rem;
+			}
+
+			&-btn {
+				padding: 1em;
+			}
+		}
+	}
+
+	.place {
+		height: 75vh; // 100
+		&__result {
+			width: 35em;
+			column-count: 3;
+		}
+	}
+
+	.footer {
+		&__boxes {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__box-desktop {
+			display: block;
+		}
+
+		&__box {
+			margin: 0 2em;
+			width: 20%;
+
+			&:first-child {
+				width: 60%;
+			}
+		}
+
+		&__box-title {
+			font-size: 2rem;
+		}
+
+		&__box-list {
+			list-style: none;
+		}
+
+		&__box-list {
+			margin-bottom: 1em;
+
+			a {
+				text-decoration: none;
+				color: whitesmoke;
+			}
+		}
+	}
+
+	.login_form {
+		display: flex;
+		padding: 0.5em;
+		background-color: rgba(47, 40, 40, 0.75);
+		width: 450px;
+		justify-content: space-between;
+
+
+		label {
+			justify-content: center;
+			color: $pure-white;
+		}
+
+		input {
+			border-radius: 7px;
+			min-width: 350px;
+			height: 2em;
+		}
+	}
+
+.reg_form {
+	div {
+		display: flex;
+		width: 500px;
+		justify-content: space-between;
+	}
+
+	&--terms div {
+		display: flex;
+		//width: 450px;
+		justify-content: space-evenly;
+		//padding: 0.5em 0;
+		// color: red;
+	}
+}
+}
+
+@media (min-width: 992px) {
+	.burger-btn {
+		top: 120px;
+		right: 40px;
+	}
+
+	.sticky {
+		top: 40px;
+		right: 40px;
+	}
+
+	.header,
+	.place {
+		@include heroImages("../img/chiayi_port_1920.jpg");
+
+		&__heading {
+			font-size: 10rem;
+		}
+	}
+
+	.section-heading {
+		font-size: 4.8rem;
+	}
+
+	.section-padding {
+		padding: 10em 2em;
+	}
+
+	.offers {
+		&__box {
+			margin: 5em 0;
+
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				margin-bottom: 2em;
+			}
+		}
+
+		&__title {
+			font-size: 3.3rem;
+		}
+
+		&_-text {
+			font-size: 2.2rem;
+		}
+	}
+
+	.hero-img {
+		padding: 15rem 2em;
+		@include heroImages("../img/boats_1920.jpg");
+
+		&__title {
+			font-size: 7rem;
+		}
+
+		hr {
+			width: 60%;
+			max-width: 900px;
+		}
+	}
+
+	.news {
+		background-image: $dark-gradient, url("../img/news_1920.jpg");
+
+		&-option {
+			&-img {
+				// object-fit: cover;
+				height: 300px;
+			}
+		}
+	}
+
+	.place {
+		&__result {
+			width: 45em;
+			column-count: 4;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.price {
+		&__card {
+			width: 22%;
+		}
+	}
+
+	.place {
+		&__result {
+			width: 60em;
+			column-count: 5;
+		}
+	}
+}
+
+
+.navPanel {
+	&__items {
+		list-style: none;
+		display: flex;
+
+		li {
+			margin: 1em;
+
+			a {
+				padding: 0.2em;
+				text-decoration: none;
+				color: $pure-white;
+				font-size:2.3rem;
+				transition: all 0.5s ease-in-out;
+				position: relative;
+				text-transform: uppercase;
+				border: 1px solid $pure-white;
+				border-radius: 7px;
+
+				&:hover {
+					background-color: $dark;
+					border: 1px solid $dark;
+				}
+			}
+		}
+	}
+}
+
