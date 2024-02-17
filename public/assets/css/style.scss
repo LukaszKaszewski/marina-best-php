@@ -692,34 +692,10 @@ body {
 	margin-bottom: 4em;
 }
 
-
-
-//.reg_form {
-//	padding: 0.5em;
-//	background-color: rgba(47, 40, 40, 0.75);
-//
-//	label {
-//		color: $pure-white;
-//	}
-//
-//	input {
-//		border-radius: 7px;
-//		width: 230px;
-//	}
-//
-//	div {
-//		display: flex;
-//		width: 450px;
-//		justify-content: space-between;
-//	}
-//
-//	&--terms div {
-//		display: flex;
-//		width: 400px;
-//		justify-content: space-evenly;
-//		padding: 0.5em 0;
-//	}
-//}
+// remove img from /emailtnx
+.bgeraser {
+	background-image: none;
+}
 
 
 // responsive

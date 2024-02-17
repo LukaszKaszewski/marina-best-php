@@ -6,7 +6,7 @@
 
 
 <!-- header and main site -->
-<header class="header section">
+<header class="header">
     <h1 class="header__heading">Marina B E S T</h1>
     <p class="header__text">Wyjątkowe miejsce na Twoje wyjątkowe wakacje</p>
     <a href="#offers" class="header__btn btn-special-animation"
@@ -20,7 +20,7 @@
 
 
 <main class="main">
-    <section class="offer section-padding section white-section" id="offer">
+    <section class="offer section-padding section white-section" id="offers">
         <div class="wrapper">
             <h2 class="section-heading">Nasza wyjątkowa oferta</h2>
 
@@ -241,18 +241,17 @@
     <section class="contact section-padding section" id="contact">
         <h2 class="section-heading">Formularz kontakowy</h2>
         <div class="wrapper">
-            <form action="" class="contact__form">
+            <form action="mail.php" method="post" class="contact__form">
                 <div class="contact__form-top">
                     <label for="name" class="contact__form-label">Imie:</label>
-                    <input type="text" id="name" class="contact__form-input">
+                    <input type="text" name="name" placeholder="Twoje imię..." class="contact__form-input">
 
-                    <label for="email" class="contact__form-label">Adres email:</label>
-                    <input type="text" id="email" class="contact__form-input">
+                    <label for="lname" class="contact__form-label">Adres email:</label>
+                    <input type="email" name="email" placeholder="Twój email.." class="contact__form-input">
                 </div>
 
-                <label for="msg" class="contact__form-label">Twoja wiadomość:</label>
-                <textarea name="" id="msg" class="contact__form-area" cols="30" rows="10"></textarea>
-
+                <label for="message" class="contact__form-label">Twoja wiadomość:</label>
+                <textarea name="message" placeholder="Napisz coś.." class="contact__form-area" cols="30" rows="10"></textarea>
                 <button type="submit" class="contact__form-btn btn-special-animation">Wyślij</button>
             </form>
         </div>
