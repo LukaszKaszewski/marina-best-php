@@ -2,6 +2,8 @@
 
 namespace App\Repository;
 
+use App\Entity\Boat;
+use App\Entity\User;
 use App\Entity\Place;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -72,4 +74,15 @@ class PlaceRepository extends ServiceEntityRepository
 
         return $availablePlaces;
     }
+
+    public function reservation()
+    {
+        // wyszukiwanie zajętych pozycji
+        return $this->createQueryBuilder('p')
+            ->select('b.name', 'p.number', 'p.start_date', 'p.end_date')
+            ->join('p.boat', 'b')
+            ->join('p.user', 'u')
+            ->getQuery()
+            ->getResult();
+        }
 }

@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d79ad6-8432-4ed2-b3c9-46d20e4751d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/mail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/EmailtnxController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/emailtnx/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c951158a-100e-4c28-a35a-730237437426.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c951158a-100e-4c28-a35a-730237437426.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PanelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PlaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PlaceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/panel/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/panel/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +263,7 @@
       <workItem from="1708110671289" duration="9969000" />
       <workItem from="1708122842946" duration="2125000" />
       <workItem from="1708173141486" duration="5425000" />
-      <workItem from="1708196881983" duration="3117000" />
+      <workItem from="1708196881983" duration="9707000" />
     </task>
     <servers />
   </component>

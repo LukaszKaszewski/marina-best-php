@@ -21,6 +21,20 @@
             </ul>
         </nav>
 
+        {# Zarezerwowane terminy #}
+        {% if reservation is not empty %}
+            <h2>Twoje rezerwacje:</h2>
+            <ol>
+                {% for item in reservation %}
+                    <li>{{ item.start_date|date('Y-m-d') }} - {{ item.end_date|date('Y-m-d') }} - Miejsce: {{ item.number }} - {{ item.name }} </li>
+                {% endfor %}
+            </ol>
+
+
+        {% else %}
+            <p>Nie masz żadnych rezerwacji.</p>
+        {% endif %}
+
 
 
 
