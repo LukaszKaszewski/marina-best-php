@@ -2,7 +2,6 @@
 
 namespace App\Repository;
 
-use App\Entity\Boat;
 use App\Entity\User;
 use App\Entity\Place;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -79,8 +78,7 @@ class PlaceRepository extends ServiceEntityRepository
     {
         // wyszukiwanie zajętych pozycji
         return $this->createQueryBuilder('p')
-            ->select('b.name', 'p.number', 'p.start_date', 'p.end_date')
-            ->join('p.boat', 'b')
+            ->select('p.start_date', 'p.end_date', 'p.number', 'p.boat_name', 'u.username')
             ->join('p.user', 'u')
             ->getQuery()
             ->getResult();

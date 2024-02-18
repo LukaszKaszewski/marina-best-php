@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d79ad6-8432-4ed2-b3c9-46d20e4751d4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20240218211938.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20240218213605.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c951158a-100e-4c28-a35a-730237437426.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c951158a-100e-4c28-a35a-730237437426.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PanelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Boat.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Place.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Place.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/BoatRepository.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/PlaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PlaceRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/panel/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/panel/index.html.twig" afterDir="false" />
     </list>
@@ -263,7 +270,8 @@
       <workItem from="1708110671289" duration="9969000" />
       <workItem from="1708122842946" duration="2125000" />
       <workItem from="1708173141486" duration="5425000" />
-      <workItem from="1708196881983" duration="9707000" />
+      <workItem from="1708196881983" duration="10319000" />
+      <workItem from="1708289569539" duration="5715000" />
     </task>
     <servers />
   </component>

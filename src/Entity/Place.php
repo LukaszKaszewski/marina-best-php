@@ -31,8 +31,8 @@ class Place
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?boat $boat = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $boat_name = null;
 
     public function getId(): ?int
     {
@@ -101,15 +101,16 @@ class Place
         return $this;
     }
 
-    public function getBoat(): ?boat
+    public function getBoatName(): ?string
     {
-        return $this->boat;
+        return $this->boat_name;
     }
 
-    public function setBoat(?boat $boat): static
+    public function setBoatName(?string $boat_name): static
     {
-        $this->boat = $boat;
+        $this->boat_name = $boat_name;
 
         return $this;
     }
+
 }

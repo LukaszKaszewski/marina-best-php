@@ -25,9 +25,15 @@
         {% if reservation is not empty %}
             <h2>Twoje rezerwacje:</h2>
             <ol>
+
                 {% for item in reservation %}
-                    <li>{{ item.start_date|date('Y-m-d') }} - {{ item.end_date|date('Y-m-d') }} - Miejsce: {{ item.number }} - {{ item.name }} </li>
+                    {# show only if user i logged#}
+                    {% if user.username ==  item.username  %}
+                        <li>{{ item.start_date|date('Y-m-d') }} - {{ item.end_date|date('Y-m-d') }} - Miejsce: {{ item.number }} - {{ item.boat_name}} - {{ item.username }}</li>
+                    {% endif %}
                 {% endfor %}
+
+
             </ol>
 
 

@@ -47,13 +47,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user_id', targetEntity: Place::class)]
     private Collection $places;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Boat::class)]
-    private Collection $boats;
-
     public function __construct()
     {
         $this->places = new ArrayCollection();
-        $this->boats = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -205,33 +201,4 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @return Collection<int, Boat>
-     */
-    public function getBoats(): Collection
-    {
-        return $this->boats;
-    }
-
-    public function addBoat(Boat $boat): static
-    {
-        if (!$this->boats->contains($boat)) {
-            $this->boats->add($boat);
-            $boat->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeBoat(Boat $boat): static
-    {
-        if ($this->boats->removeElement($boat)) {
-            // set the owning side to null (unless already changed)
-            if ($boat->getUser() === $this) {
-                $boat->setUser(null);
-            }
-        }
-
-        return $this;
-    }
 }
