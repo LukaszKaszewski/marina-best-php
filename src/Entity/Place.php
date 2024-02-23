@@ -17,10 +17,6 @@ class Place
     #[ORM\Column]
     private ?int $number = null;
 
-    #[ORM\Column(length: 10)]
-    private ?string $size = null;
-
-
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $start_date = null;
 
@@ -50,20 +46,6 @@ class Place
 
         return $this;
     }
-
-    public function getSize(): ?string
-    {
-        return $this->size;
-    }
-
-    public function setSize(string $size): static
-    {
-        $this->size = $size;
-
-        return $this;
-    }
-
-
 
     public function getStartDate(): ?\DateTimeInterface
     {

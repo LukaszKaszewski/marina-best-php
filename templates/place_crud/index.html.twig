@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Place index{% endblock %}
+
+{% block body %}
+    <div class="place">
+    <h2>Witaj {{ user.username }}</h2>
+
+    <table class="table">
+        {% if is_granted('ROLE_ADMIN') %}
+        <thead>
+            <tr>
+                <th>Użytkownik</th>
+                <th>Nr miejsca</th>
+                <th>Początek postoju</th>
+                <th>Koniec postoju</th>
+                <th>Nazwa jednostki</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            {% if places is not empty %}
+                {% for place in places %}
+                    <tr>
+                        <td>{{ place.userId.username }}</td>
+                        <td>{{ place.number }}</td>
+                        <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>
+                        <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>
+                        <td>{{ place.boatName }}</td>
+                        <td>
+                            <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>
+                            <a href="{{ path('app_place_crud_edit', {'id': place.id}) }}">Edytuj</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="6">Brak rezerwacji w bazie</td>
+                </tr>
+            {% endif %}
+        </tbody>
+        {% else %}
+        <thead>
+        <tr>
+            <th>Użytkownik</th>
+            <th>Nr miejsca</th>
+            <th>Początek postoju</th>
+            <th>Koniec postoju</th>
+            <th>Nazwa jednostki</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+            {% if places is not empty %}
+                {% set hasUserPlaces = false %}
+                {% for place in places %}
+                    {% if user.username == place.userId.username %}
+                        {% set hasUserPlaces = true %}
+                        <tr>
+                            <td>{{ place.userId.username }}</td>
+                            <td>{{ place.number }}</td>
+                            <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>
+                            <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>
+                            <td>{{ place.boatName }}</td>
+                            <td>
+                                <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>
+                                <a href="{{ path('app_place_crud_edit', {'id': place.id}) }}">Edytuj</a>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                {% if not hasUserPlaces %}
+                    <tr>
+                        <td colspan="6">Nie masz żadnych rezerwacji</td>
+                    </tr>
+                {% endif %}
+            {% else %}
+                <tr>
+                    <td colspan="6">Brak rezerwacji w bazie</td>
+                </tr>
+            {% endif %}
+        {% endif %}
+        </tbody>
+    </table>
+
+
+    <a href="{{ path('app_place_crud_new') }}">Zarezerwuj miejsce</a>
+    </div>
+{% endblock %}

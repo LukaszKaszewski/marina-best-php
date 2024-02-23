@@ -55,7 +55,7 @@
     <!-- nav -->
     <nav class="nav">
         {% if is_granted('ROLE_USER') %}
-            <a href="{{ path('app_panel') }}" class="nav__item nav__btn1">Panel użytkownika</a>
+            <a href="/userpanel" class="nav__item nav__btn1">Panel użytkownika</a>
             <a href="{{ path('app_index') }}" class="nav__item nav__btn2">Strona główna</a>
             <a href="tel:+48501501501" class="nav__item nav__btn3">Zadzwoń do nas</a>
             <a href="/#contact" class="nav__item nav__btn4">Napisz do nas</a>
