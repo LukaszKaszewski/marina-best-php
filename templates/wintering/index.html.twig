@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wintering index{% endblock %}
+
+{% block body %}
+    <h1>Wintering index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Boat_name</th>
+                <th>Boat_length</th>
+                <th>Boat_width</th>
+                <th>Start_date</th>
+                <th>End_date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for wintering in winterings %}
+            <tr>
+                <td>{{ wintering.id }}</td>
+                <td>{{ wintering.boatName }}</td>
+                <td>{{ wintering.boatLength }}</td>
+                <td>{{ wintering.boatWidth }}</td>
+                <td>{{ wintering.startDate ? wintering.startDate|date('Y-m-d') : '' }}</td>
+                <td>{{ wintering.endDate ? wintering.endDate|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_wintering_show', {'id': wintering.id}) }}">show</a>
+                    <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_wintering_new') }}">Create new</a>
+{% endblock %}

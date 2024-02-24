@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Wintering{% endblock %}
+
+{% block body %}
+    <h1>Edit Wintering</h1>
+
+    {{ include('wintering/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_wintering_index') }}">back to list</a>
+
+    {{ include('wintering/_delete_form.html.twig') }}
+{% endblock %}

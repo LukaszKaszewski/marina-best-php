@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wintering{% endblock %}
+
+{% block body %}
+    <h1>Wintering</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ wintering.id }}</td>
+            </tr>
+            <tr>
+                <th>Boat_name</th>
+                <td>{{ wintering.boatName }}</td>
+            </tr>
+            <tr>
+                <th>Boat_length</th>
+                <td>{{ wintering.boatLength }}</td>
+            </tr>
+            <tr>
+                <th>Boat_width</th>
+                <td>{{ wintering.boatWidth }}</td>
+            </tr>
+            <tr>
+                <th>Start_date</th>
+                <td>{{ wintering.startDate ? wintering.startDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>End_date</th>
+                <td>{{ wintering.endDate ? wintering.endDate|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_wintering_index') }}">back to list</a>
+
+    <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">edit</a>
+
+    {{ include('wintering/_delete_form.html.twig') }}
+{% endblock %}

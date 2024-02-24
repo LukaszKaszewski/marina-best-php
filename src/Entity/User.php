@@ -47,9 +47,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user_id', targetEntity: Place::class)]
     private Collection $places;
 
+    #[ORM\OneToMany(mappedBy: 'user_id', targetEntity: Service::class)]
+    private Collection $services;
+
+    #[ORM\OneToMany(mappedBy: 'user_id', targetEntity: Wintering::class)]
+    private Collection $winterings;
+
     public function __construct()
     {
         $this->places = new ArrayCollection();
+        $this->services = new ArrayCollection();
+        $this->winterings = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -195,6 +203,66 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($place->getUserId() === $this) {
                 $place->setUserId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Service>
+     */
+    public function getServices(): Collection
+    {
+        return $this->services;
+    }
+
+    public function addService(Service $service): static
+    {
+        if (!$this->services->contains($service)) {
+            $this->services->add($service);
+            $service->setUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeService(Service $service): static
+    {
+        if ($this->services->removeElement($service)) {
+            // set the owning side to null (unless already changed)
+            if ($service->getUserId() === $this) {
+                $service->setUserId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Wintering>
+     */
+    public function getWinterings(): Collection
+    {
+        return $this->winterings;
+    }
+
+    public function addWintering(Wintering $wintering): static
+    {
+        if (!$this->winterings->contains($wintering)) {
+            $this->winterings->add($wintering);
+            $wintering->setUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeWintering(Wintering $wintering): static
+    {
+        if ($this->winterings->removeElement($wintering)) {
+            // set the owning side to null (unless already changed)
+            if ($wintering->getUserId() === $this) {
+                $wintering->setUserId(null);
             }
         }
 
