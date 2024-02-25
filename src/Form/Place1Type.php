@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Place;
+use App\Entity\Rfid;
 use App\Entity\User;
 use App\Repository\UserRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -30,7 +31,7 @@ class Place1Type extends AbstractType
             ->add('user_id', EntityType::class, [
                 'class' => User::class,
                 'choice_label' => 'username',
-                'label' => 'Użytkownik',
+                'label' => 'Użytkownik: ',
 
                 // add style to hide field if user is not admin
                 'attr' => [
@@ -40,7 +41,21 @@ class Place1Type extends AbstractType
                     'style' => !$isAdmin ? 'display: none;' : ''
                 ]
             ])
-            ->add('number')
+            ->add('keyNumber', EntityType::class, [
+                'class' => Rfid::class,
+                'choice_label' => 'number',
+                'label' => 'Numer klucza: ',
+                // add style to hide field if user is not admin
+                'attr' => [
+                    'style' => !$isAdmin ? 'display: none;' : ''
+                ],
+                'label_attr' => [
+                    'style' => !$isAdmin ? 'display: none;' : ''
+                ]
+            ])
+            ->add('number', null, [
+                'label' => 'Nr miejsca: ',
+            ])
             ->add('start_date', DateType::class, [
                 'format' => 'dd MMMM y',
                 'label' => 'Data początkowa',

@@ -30,6 +30,9 @@ class Place
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $boat_name = null;
 
+    #[ORM\ManyToOne(inversedBy: 'places')]
+    private ?Rfid $key_number = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -91,6 +94,18 @@ class Place
     public function setBoatName(?string $boat_name): static
     {
         $this->boat_name = $boat_name;
+
+        return $this;
+    }
+
+    public function getKeyNumber(): ?rfid
+    {
+        return $this->key_number;
+    }
+
+    public function setKeyNumber(?rfid $key_number): static
+    {
+        $this->key_number = $key_number;
 
         return $this;
     }

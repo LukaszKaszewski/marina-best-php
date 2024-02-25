@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Rfid{% endblock %}
+
+{% block body %}
+    <h1>Edit Rfid</h1>
+
+    {{ include('rfid/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_rfid_index') }}">back to list</a>
+
+    {{ include('rfid/_delete_form.html.twig') }}
+{% endblock %}

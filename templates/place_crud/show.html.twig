@@ -8,24 +8,28 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ place.id }}</td>
+                <th>Użytkownik: </th>
+                <td>{{ place.userId.username }}</td>
             </tr>
             <tr>
-                <th>Number</th>
+                <th>Nr miejsca: </th>
                 <td>{{ place.number }}</td>
             </tr>
             <tr>
-                <th>Start_date</th>
+                <th>Początek postoju: </th>
                 <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>End_date</th>
+                <th>Koniec postoju: </th>
                 <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>Boat_name</th>
+                <th>Nazwa jednostki: </th>
                 <td>{{ place.boatName }}</td>
+            </tr>
+            <tr>
+                <th>Nr klucza: </th>
+                <td>{{ place.keyNumber is not null ? place.keyNumber.number : '---' }}</td>
             </tr>
         </tbody>
     </table>

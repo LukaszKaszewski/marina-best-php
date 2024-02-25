@@ -15,8 +15,7 @@
                 <th>Początek postoju</th>
                 <th>Koniec postoju</th>
                 <th>Nazwa jednostki</th>
-
-
+                <th>RFID</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +27,7 @@
                         <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>
                         <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>
                         <td>{{ place.boatName }}</td>
+                        <td>{{ place.keyNumber is not null ? place.keyNumber.number : '---' }}</td> {# if null, show nothing #}
                         <td>
                             <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>
                             <a href="{{ path('app_place_crud_edit', {'id': place.id}) }}">Edytuj</a>
