@@ -35,6 +35,9 @@ class Service
     #[ORM\Column(nullable: true)]
     private ?bool $crane = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $boat_name = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +123,18 @@ class Service
     public function setCrane(?bool $crane): static
     {
         $this->crane = $crane;
+
+        return $this;
+    }
+
+    public function getBoatName(): ?string
+    {
+        return $this->boat_name;
+    }
+
+    public function setBoatName(string $boat_name): static
+    {
+        $this->boat_name = $boat_name;
 
         return $this;
     }

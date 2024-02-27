@@ -17,8 +17,10 @@ class ServiceController extends AbstractController
     #[Route('/', name: 'app_service_index', methods: ['GET'])]
     public function index(ServiceRepository $serviceRepository): Response
     {
+        $user = $this->getUser();
         return $this->render('service/index.html.twig', [
             'services' => $serviceRepository->findAll(),
+            'user' => $user,
         ]);
     }
 

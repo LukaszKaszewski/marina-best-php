@@ -43,13 +43,10 @@
         {% else %}
         <thead>
         <tr>
-            <th>Użytkownik</th>
             <th>Nr miejsca</th>
             <th>Początek postoju</th>
             <th>Koniec postoju</th>
             <th>Nazwa jednostki</th>
-
-
         </tr>
         </thead>
         <tbody>
@@ -59,7 +56,6 @@
                     {% if user.username == place.userId.username %}
                         {% set hasUserPlaces = true %}
                         <tr>
-                            <td>{{ place.userId.username }}</td>
                             <td>{{ place.number }}</td>
                             <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>
                             <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>
@@ -87,5 +83,14 @@
 
 
     <a href="{{ path('app_place_crud_new') }}">Zarezerwuj miejsce</a>
+
+        <a href="{{ path('app_service_index') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Zamów serwis</button>
+        </a>
+        {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('app_rfid_index') }}">
+        <button class="contact__form-btn btn-special-animation spacer">RFID</button>
+    </a>
+    {% endif %}
     </div>
 {% endblock %}

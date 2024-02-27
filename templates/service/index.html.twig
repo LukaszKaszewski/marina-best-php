@@ -3,43 +3,97 @@
 {% block title %}Service index{% endblock %}
 
 {% block body %}
-    <h1>Service index</h1>
+    <h1>Serwis dla {{ user.username }}</h1>
 
     <table class="table">
-        <thead>
+        {% if is_granted('ROLE_ADMIN') %}
+            <thead>
+                <tr>
+                    <th>Użytkownik</th>
+                    <th>Nazwa jednostki</th>
+                    <th>Date</th>
+                    <th>Energy</th>
+                    <th>Fuel</th>
+                    <th>Water</th>
+                    <th>Waste</th>
+                    <th>Crane</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% if services is not empty %}
+                {% for service in services %}
+                    <tr>
+                        <td>{{ service.userId.username }}</td>
+                        <td>{{ service.boatName }}</td>
+                        <td>{{ service.date ? service.date|date('Y-m-d') : '' }}</td>
+                        <td>{{ service.energy ? 'X' : '---' }}</td>
+                        <td>{{ service.fuel ? 'X' : '---' }}</td>
+                        <td>{{ service.water ? 'X' : '---' }}</td>
+                        <td>{{ service.waste ? 'X' : '---' }}</td>
+                        <td>{{ service.crane ? 'X' : '---' }}</td>
+                        <td>
+                            <a href="{{ path('app_service_show', {'id': service.id}) }}">show</a>
+                            <a href="{{ path('app_service_edit', {'id': service.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                    <tr>
+                        <td colspan="8">no records found</td>
+                    </tr>
+            {% endif %}
+            </tbody>
+        {% else %}
+            <thead>
             <tr>
-                <th>Id</th>
+                <th>Nazwa jednostki</th>
+                <th>Date</th>
                 <th>Energy</th>
                 <th>Fuel</th>
                 <th>Water</th>
                 <th>Waste</th>
-                <th>Date</th>
                 <th>Crane</th>
                 <th>actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for service in services %}
-            <tr>
-                <td>{{ service.id }}</td>
-                <td>{{ service.energy ? 'Yes' : 'No' }}</td>
-                <td>{{ service.fuel ? 'Yes' : 'No' }}</td>
-                <td>{{ service.water ? 'Yes' : 'No' }}</td>
-                <td>{{ service.waste ? 'Yes' : 'No' }}</td>
-                <td>{{ service.date ? service.date|date('Y-m-d') : '' }}</td>
-                <td>{{ service.crane ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href="{{ path('app_service_show', {'id': service.id}) }}">show</a>
-                    <a href="{{ path('app_service_edit', {'id': service.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
+            </thead>
+            <tbody>
+            {% if services is not empty %}
+                {% set hasUserPlaces = false %}
+                {% for service in services %}
+                    {% if user.username == service.userId.username %}
+                    {% set hasUserPlaces = true %}
+                        <tr>
+                            <td>{{ service.boatName }}</td>
+                            <td>{{ service.date ? service.date|date('Y-m-d') : '' }}</td>
+                            <td>{{ service.energy ? 'X' : '---' }}</td>
+                            <td>{{ service.fuel ? 'X' : '---' }}</td>
+                            <td>{{ service.water ? 'X' : '---' }}</td>
+                            <td>{{ service.waste ? 'X' : '---' }}</td>
+                            <td>{{ service.crane ? 'X' : '---' }}</td>
+                            <td>
+                                <a href="{{ path('app_service_show', {'id': service.id}) }}">show</a>
+                                <a href="{{ path('app_service_edit', {'id': service.id}) }}">edit</a>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                {% if not hasUserPlaces %}
+                    <tr>
+                        <td colspan="6">Nie masz żadnych rezerwacji</td>
+                    </tr>
+                {% endif %}
+            {% else %}
+                <tr>
+                    <td colspan="6">Brak rezerwacji w bazie</td>
+                </tr>
+            {% endif %}
+            </tbody>
     </table>
 
     <a href="{{ path('app_service_new') }}">Create new</a>
+    <a href="{{ path('app_place_crud_index') }}">
+        <button class="contact__form-btn btn-special-animation spacer">Panel użytkownika</button>
+    </a>
+            {% endif %}
 {% endblock %}

@@ -480,8 +480,7 @@ body {
 .contact__form-btn {
   align-self: center;
   padding: 1em;
-  width: 100%;
-  max-width: 250px;
+  width: 13em;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -514,12 +513,14 @@ body {
 }
 
 .place {
-  position: relative;
   display: flex;
+  position: relative;
   top: 0;
+  right: 0;
   align-items: center;
   flex-direction: column;
   padding: 2em;
+  height: 100vh;
   text-align: center;
   color: #fff;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../img/chiayi_port_640.jpg");
@@ -542,7 +543,6 @@ body {
 }
 .place #place_start_date,
 .place #place_end_date {
-  min-width: 500px;
   margin-top: 0.3em;
   margin-bottom: 2em;
 }
