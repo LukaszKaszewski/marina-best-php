@@ -5,18 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d79ad6-8432-4ed2-b3c9-46d20e4751d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20240227221806.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/PlacesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/places/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PlaceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RfidController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RfidController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PlaceCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PlaceCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ServiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/WinteringController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/WinteringController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Wintering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Wintering.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ServiceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ServiceType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/WinteringType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/WinteringType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/place_crud/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/place_crud/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rfid/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rfid/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/service/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/wintering/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wintering/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/wintering/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wintering/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +291,12 @@
       <workItem from="1708808636843" duration="2491000" />
       <workItem from="1708891902587" duration="8313000" />
       <workItem from="1708979739123" duration="6139000" />
-      <workItem from="1709053408591" duration="10939000" />
+      <workItem from="1709053408591" duration="11628000" />
+      <workItem from="1709153252043" duration="66000" />
+      <workItem from="1709153328427" duration="1678000" />
+      <workItem from="1709237698686" duration="8328000" />
+      <workItem from="1709331534731" duration="1370000" />
+      <workItem from="1709414488573" duration="6724000" />
     </task>
     <servers />
   </component>

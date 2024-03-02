@@ -10,8 +10,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/service')]
+#[isGranted('ROLE_USER')]
 class ServiceController extends AbstractController
 {
     #[Route('/', name: 'app_service_index', methods: ['GET'])]
@@ -25,10 +28,16 @@ class ServiceController extends AbstractController
     }
 
     #[Route('/new', name: 'app_service_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, Security $security): Response
     {
+        // Pobierz zalogowanego użytkownika
+        $loggedInUser = $security->getUser();
         $service = new Service();
         $form = $this->createForm(ServiceType::class, $service);
+
+        // Ustaw domyślną wartość user_id jako id zalogowanego użytkownika
+        $form->get('user_id')->setData($loggedInUser);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

@@ -3,41 +3,94 @@
 {% block title %}Wintering index{% endblock %}
 
 {% block body %}
-    <h1>Wintering index</h1>
+    <div class="place">
+    <h2>Zimowanie dla {{ user.username }}</h2>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Boat_name</th>
-                <th>Boat_length</th>
-                <th>Boat_width</th>
-                <th>Start_date</th>
-                <th>End_date</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for wintering in winterings %}
-            <tr>
-                <td>{{ wintering.id }}</td>
-                <td>{{ wintering.boatName }}</td>
-                <td>{{ wintering.boatLength }}</td>
-                <td>{{ wintering.boatWidth }}</td>
-                <td>{{ wintering.startDate ? wintering.startDate|date('Y-m-d') : '' }}</td>
-                <td>{{ wintering.endDate ? wintering.endDate|date('Y-m-d') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_wintering_show', {'id': wintering.id}) }}">show</a>
-                    <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    {% if is_granted('ROLE_ADMIN') %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Użytkownik</th>
+                    <th>Jednostki</th>
+                    <th>Długość</th>
+                    <th>Szerokość</th>
+                    <th>Start</th>
+                    <th>Koniec</th>
+                    <th>Opis</th>
 
-    <a href="{{ path('app_wintering_new') }}">Create new</a>
+                </tr>
+            </thead>
+            <tbody>
+                {% if winterings is not empty %}
+                    {% for wintering in winterings %}
+                        <tr>
+                            <td>{{ wintering.userId.username }}</td>
+                            <td>{{ wintering.boatName }}</td>
+                            <td>{{ wintering.boatLength }}</td>
+                            <td>{{ wintering.boatWidth }}</td>
+                            <td>{{ wintering.startDate ? wintering.startDate|date('Y-m-d') : '' }}</td>
+                            <td>{{ wintering.endDate ? wintering.endDate|date('Y-m-d') : '' }}</td>
+                            <td>{{ wintering.description }}</td>
+                            <td>
+                                <a href="{{ path('app_wintering_show', {'id': wintering.id}) }}">show</a>
+                                <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">edit</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="7">no records found</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    {% else %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Jednostki</th>
+                <th>Długość</th>
+                <th>Szerokość</th>
+                <th>Start</th>
+                <th>Koniec</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% if winterings is not empty %}
+                    {% set hasUserPlaces = false %}
+                    {% for wintering in winterings %}
+                        {% if user.username == wintering.userId.username %}
+                        {% set hasUserPlaces = true %}
+                        <tr>
+                            <td>{{ wintering.boatName }}</td>
+                            <td>{{ wintering.boatLength }}</td>
+                            <td>{{ wintering.boatWidth }}</td>
+                            <td>{{ wintering.startDate ? wintering.startDate|date('Y-m-d') : '' }}</td>
+                            <td>{{ wintering.endDate ? wintering.endDate|date('Y-m-d') : '' }}</td>
+                            <td>
+                                <a href="{{ path('app_wintering_show', {'id': wintering.id}) }}">show</a>
+                                <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">edit</a>
+                            </td>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                    {% if not hasUserPlaces %}
+                        <tr>
+                            <td colspan="6">Nie masz żadnych rezerwacji</td>
+                        </tr>
+                    {% endif %}
+                {% else %}
+                    <tr>
+                        <td colspan="6">Brak rezerwacji w bazie</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    {% endif %}
+
+        <a href="{{ path('app_wintering_new') }}">Create new</a>
+        <a href="{{ path('app_place_crud_index') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Panel użytkownika</button>
+        </a>
+    </div>
 {% endblock %}

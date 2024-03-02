@@ -6,55 +6,57 @@
     <div class="place">
     <h2>Witaj {{ user.username }}</h2>
 
-    <table class="table">
-        {% if is_granted('ROLE_ADMIN') %}
-        <thead>
-            <tr>
-                <th>Użytkownik</th>
-                <th>Nr miejsca</th>
-                <th>Początek postoju</th>
-                <th>Koniec postoju</th>
-                <th>Nazwa jednostki</th>
-                <th>RFID</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% if places is not empty %}
-                {% for place in places %}
-                    <tr>
-                        <td>{{ place.userId.username }}</td>
-                        <td>{{ place.number }}</td>
-                        <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>
-                        <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>
-                        <td>{{ place.boatName }}</td>
-                        <td>{{ place.keyNumber is not null ? place.keyNumber.number : '---' }}</td> {# if null, show nothing #}
-                        <td>
-                            <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>
-                            <a href="{{ path('app_place_crud_edit', {'id': place.id}) }}">Edytuj</a>
-                        </td>
-                    </tr>
-                {% endfor %}
-            {% else %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <table class="table">
+            <thead>
                 <tr>
-                    <td colspan="6">Brak rezerwacji w bazie</td>
+                    <th>Użytkownik</th>
+                    <th>Nr miejsca</th>
+                    <th>Początek postoju</th>
+                    <th>Koniec postoju</th>
+                    <th>Nazwa jednostki</th>
+                    <th>RFID</th>
                 </tr>
-            {% endif %}
-        </tbody>
-        {% else %}
-        <thead>
-        <tr>
-            <th>Nr miejsca</th>
-            <th>Początek postoju</th>
-            <th>Koniec postoju</th>
-            <th>Nazwa jednostki</th>
-        </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
+                {% if places is not empty %}
+                    {% for place in places %}
+                        <tr>
+                            <td>{{ place.userId.username }}</td>
+                            <td>{{ place.number }}</td>
+                            <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>
+                            <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>
+                            <td>{{ place.boatName }}</td>
+                            <td>{{ place.keyNumber is not null ? place.keyNumber.number : '---' }}</td> {# if null, show nothing #}
+                            <td>
+                                <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>
+                                <a href="{{ path('app_place_crud_edit', {'id': place.id}) }}">Edytuj</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="6">Brak rezerwacji w bazie</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    {% else %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nr miejsca</th>
+                    <th>Początek postoju</th>
+                    <th>Koniec postoju</th>
+                    <th>Nazwa jednostki</th>
+                </tr>
+            </thead>
+            <tbody>
             {% if places is not empty %}
                 {% set hasUserPlaces = false %}
                 {% for place in places %}
                     {% if user.username == place.userId.username %}
-                        {% set hasUserPlaces = true %}
+                    {% set hasUserPlaces = true %}
                         <tr>
                             <td>{{ place.number }}</td>
                             <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>
@@ -77,20 +79,22 @@
                     <td colspan="6">Brak rezerwacji w bazie</td>
                 </tr>
             {% endif %}
-        {% endif %}
-        </tbody>
-    </table>
-
+            </tbody>
+        </table>
+    {% endif %}
 
     <a href="{{ path('app_place_crud_new') }}">Zarezerwuj miejsce</a>
 
-        <a href="{{ path('app_service_index') }}">
-            <button class="contact__form-btn btn-special-animation spacer">Zamów serwis</button>
-        </a>
-        {% if is_granted('ROLE_ADMIN') %}
-    <a href="{{ path('app_rfid_index') }}">
-        <button class="contact__form-btn btn-special-animation spacer">RFID</button>
+    <a href="{{ path('app_service_index') }}">
+        <button class="contact__form-btn btn-special-animation spacer">Zamów serwis</button>
     </a>
+    <a href="{{ path('app_wintering_index') }}">
+        <button class="contact__form-btn btn-special-animation spacer">Zimowanie</button>
+    </a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('app_rfid_index') }}">
+            <button class="contact__form-btn btn-special-animation spacer">RFID</button>
+        </a>
     {% endif %}
     </div>
 {% endblock %}

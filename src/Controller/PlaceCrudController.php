@@ -68,9 +68,15 @@ class PlaceCrudController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_place_crud_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Place $place, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Place $place, EntityManagerInterface $entityManager, Security $security): Response
     {
+        // Pobierz zalogowanego użytkownika
+        $loggedInUser = $security->getUser();
+
         $form = $this->createForm(Place1Type::class, $place);
+        // Ustaw domyślną wartość user_id jako id zalogowanego użytkownika
+        $form->get('user_id')->setData($loggedInUser);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

@@ -8,27 +8,27 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ wintering.id }}</td>
+                <th>Użytkownik: </th>
+                <td>{{ wintering.userId.username }}</td>
             </tr>
             <tr>
-                <th>Boat_name</th>
+                <th>Nazwa jednostki: </th>
                 <td>{{ wintering.boatName }}</td>
             </tr>
             <tr>
-                <th>Boat_length</th>
+                <th>Długość</th>
                 <td>{{ wintering.boatLength }}</td>
             </tr>
             <tr>
-                <th>Boat_width</th>
+                <th>Szerokość</th>
                 <td>{{ wintering.boatWidth }}</td>
             </tr>
             <tr>
-                <th>Start_date</th>
+                <th>Początek</th>
                 <td>{{ wintering.startDate ? wintering.startDate|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>End_date</th>
+                <th>Koniec</th>
                 <td>{{ wintering.endDate ? wintering.endDate|date('Y-m-d') : '' }}</td>
             </tr>
         </tbody>

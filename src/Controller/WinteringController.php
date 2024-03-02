@@ -10,23 +10,34 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/wintering')]
+#[isGranted('ROLE_USER')]
 class WinteringController extends AbstractController
 {
     #[Route('/', name: 'app_wintering_index', methods: ['GET'])]
     public function index(WinteringRepository $winteringRepository): Response
     {
+        $user = $this->getUser();
         return $this->render('wintering/index.html.twig', [
             'winterings' => $winteringRepository->findAll(),
+            'user' => $user,
         ]);
     }
 
     #[Route('/new', name: 'app_wintering_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, Security $security): Response
     {
+        // Pobierz zalogowanego użytkownika
+        $loggedInUser = $security->getUser();
         $wintering = new Wintering();
         $form = $this->createForm(WinteringType::class, $wintering);
+
+        // Ustaw domyślną wartość user_id jako id zalogowanego użytkownika
+        $form->get('user_id')->setData($loggedInUser);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
