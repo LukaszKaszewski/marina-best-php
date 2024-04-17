@@ -3,7 +3,7 @@
 {% block title %}Wintering{% endblock %}
 
 {% block body %}
-    <h1>Wintering</h1>
+    <h1>Zimowanie</h1>
 
     <table class="table">
         <tbody>
@@ -34,9 +34,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_wintering_index') }}">back to list</a>
+    <a href="{{ path('app_wintering_index') }}">Powrót</a>
 
-    <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">edit</a>
+    <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">Edytuj</a>
 
     {{ include('wintering/_delete_form.html.twig') }}
 {% endblock %}

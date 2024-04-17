@@ -22,21 +22,32 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
-            $user->setCreatedAt(new \DateTimeImmutable());
-            $user->setRoles(['ROLE_USER']);
-            $user->setPassword(
-                $userPasswordHasher->hashPassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
-            );
 
-            $entityManager->persist($user);
-            $entityManager->flush();
-            // do anything else you need here, like send an email
+            try {
+                // encode the plain password
+                $user->setCreatedAt(new \DateTimeImmutable());
+                $user->setRoles(['ROLE_USER']);
+                $user->setPassword(
+                    $userPasswordHasher->hashPassword(
+                        $user,
+                        $form->get('plainPassword')->getData()
+                    )
+                );
 
-            return $this->redirectToRoute('app_panel');
+                $entityManager->persist($user);
+                $entityManager->flush();
+
+                // do anything else you need here, like send an email
+                return $this->redirectToRoute('app_login');
+            } catch (\Doctrine\DBAL\Exception\UniqueConstraintViolationException $e) {
+                // Obsługa błędu naruszenia unikalności (duplikat)
+                // Możesz dodać tutaj logikę do obsługi komunikatu dla użytkownika
+                $this->addFlash('error', 'Podany email jest już zajęty');
+            } catch (\Exception $e) {
+                // Obsługa innych rodzajów błędów
+                $this->addFlash('error', 'Error: ' . $e->getMessage());
+            }
+
         }
 
         return $this->render('registration/register.html.twig', [

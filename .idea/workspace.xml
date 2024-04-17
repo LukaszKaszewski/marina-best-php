@@ -5,21 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d79ad6-8432-4ed2-b3c9-46d20e4751d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/PlacesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/places/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/reset_password.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20240321213344.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20240321213437.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20240322212140.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ResetPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/ResetPasswordRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ChangePasswordFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ResetPasswordRequestFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ResetPasswordRequestRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reset_password/check_email.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reset_password/email.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reset_password/request.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/reset_password/reset.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c951158a-100e-4c28-a35a-730237437426.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c951158a-100e-4c28-a35a-730237437426.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PlaceCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PlaceCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ServiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/WinteringController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/WinteringController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Wintering.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Wintering.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ServiceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ServiceType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/WinteringType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/WinteringType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PlaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PlaceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/place_crud/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/place_crud/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/service/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/wintering/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wintering/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/wintering/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wintering/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/wintering/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wintering/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/wintering/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wintering/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/wintering/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wintering/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,6 +205,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/ux-turbo" />
+      <path value="$PROJECT_DIR$/vendor/symfonycasts/reset-password-bundle" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -226,7 +260,60 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14475.35" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PS-241.14494.237" />
+        <option value="bundled-php-predefined-ba97393d7c68-8f0632a2a215-com.jetbrains.php.sharedIndexes-PS-241.14494.237" />
+        <option value="php-doctrine_collections-37cbfb0ca1b6-a976b976" />
+        <option value="php-doctrine_common-37cbfb0ca1b6-0b109775" />
+        <option value="php-doctrine_dbal-37cbfb0ca1b6-2e1af58a" />
+        <option value="php-doctrine_doctrine_bundle-37cbfb0ca1b6-6c153ed6" />
+        <option value="php-doctrine_inflector-37cbfb0ca1b6-b7cf42e2" />
+        <option value="php-doctrine_orm-37cbfb0ca1b6-be429610" />
+        <option value="php-egulias_email_validator-37cbfb0ca1b6-51edd7f1" />
+        <option value="php-masterminds_html5-37cbfb0ca1b6-a9aa1a5a" />
+        <option value="php-monolog_monolog-37cbfb0ca1b6-ed6d1630" />
+        <option value="php-nikic_php_parser-37cbfb0ca1b6-0c3f2cc7" />
+        <option value="php-phar_io_version-37cbfb0ca1b6-97401194" />
+        <option value="php-phpdocumentor_reflection_docblock-37cbfb0ca1b6-79024241" />
+        <option value="php-phpunit_php_code_coverage-37cbfb0ca1b6-3ee34d07" />
+        <option value="php-phpunit_phpunit-37cbfb0ca1b6-464036ab" />
+        <option value="php-sebastian_comparator-37cbfb0ca1b6-853dd153" />
+        <option value="php-symfony_cache-37cbfb0ca1b6-a55690e3" />
+        <option value="php-symfony_config-37cbfb0ca1b6-9212ded3" />
+        <option value="php-symfony_console-37cbfb0ca1b6-41c774ef" />
+        <option value="php-symfony_css_selector-37cbfb0ca1b6-b6135a15" />
+        <option value="php-symfony_dependency_injection-37cbfb0ca1b6-6900d56e" />
+        <option value="php-symfony_dom_crawler-37cbfb0ca1b6-83705ec5" />
+        <option value="php-symfony_error_handler-37cbfb0ca1b6-2f7234f9" />
+        <option value="php-symfony_event_dispatcher-37cbfb0ca1b6-22ca235b" />
+        <option value="php-symfony_expression_language-37cbfb0ca1b6-a0f2d917" />
+        <option value="php-symfony_filesystem-37cbfb0ca1b6-525f7c52" />
+        <option value="php-symfony_finder-37cbfb0ca1b6-18267425" />
+        <option value="php-symfony_flex-37cbfb0ca1b6-149e0c55" />
+        <option value="php-symfony_framework_bundle-37cbfb0ca1b6-95eadc1b" />
+        <option value="php-symfony_http_client-37cbfb0ca1b6-6e6f8703" />
+        <option value="php-symfony_http_client_contracts-37cbfb0ca1b6-ff239405" />
+        <option value="php-symfony_http_foundation-37cbfb0ca1b6-dbedee6a" />
+        <option value="php-symfony_http_kernel-37cbfb0ca1b6-6850ef07" />
+        <option value="php-symfony_intl-37cbfb0ca1b6-023dd7d3" />
+        <option value="php-symfony_mailer-37cbfb0ca1b6-5d994f9f" />
+        <option value="php-symfony_mime-37cbfb0ca1b6-f06c5301" />
+        <option value="php-symfony_monolog_bridge-37cbfb0ca1b6-e7240858" />
+        <option value="php-symfony_monolog_bundle-37cbfb0ca1b6-da4ff7b7" />
+        <option value="php-symfony_options_resolver-37cbfb0ca1b6-942d13ee" />
+        <option value="php-symfony_process-37cbfb0ca1b6-0c45b194" />
+        <option value="php-symfony_property_access-37cbfb0ca1b6-10c893ff" />
+        <option value="php-symfony_property_info-37cbfb0ca1b6-dd1584a5" />
+        <option value="php-symfony_routing-37cbfb0ca1b6-2eb007bc" />
+        <option value="php-symfony_security_core-37cbfb0ca1b6-a3810492" />
+        <option value="php-symfony_serializer-37cbfb0ca1b6-d56cfc98" />
+        <option value="php-symfony_string-37cbfb0ca1b6-6da9c235" />
+        <option value="php-symfony_translation-37cbfb0ca1b6-3c853d79" />
+        <option value="php-symfony_twig_bridge-37cbfb0ca1b6-305a503d" />
+        <option value="php-symfony_twig_bundle-37cbfb0ca1b6-765ae276" />
+        <option value="php-symfony_validator-37cbfb0ca1b6-9164fd14" />
+        <option value="php-symfony_var_dumper-37cbfb0ca1b6-ba6b5567" />
+        <option value="php-symfony_yaml-37cbfb0ca1b6-61027ce4" />
+        <option value="php-twig_twig-37cbfb0ca1b6-7567d17e" />
       </set>
     </attachedChunks>
   </component>
@@ -296,7 +383,27 @@
       <workItem from="1709153328427" duration="1678000" />
       <workItem from="1709237698686" duration="8328000" />
       <workItem from="1709331534731" duration="1370000" />
-      <workItem from="1709414488573" duration="6724000" />
+      <workItem from="1709414488573" duration="7366000" />
+      <workItem from="1710361737341" duration="128000" />
+      <workItem from="1710361896009" duration="1856000" />
+      <workItem from="1710536685685" duration="1198000" />
+      <workItem from="1710791398881" duration="977000" />
+      <workItem from="1711056510561" duration="2700000" />
+      <workItem from="1711059519024" duration="598000" />
+      <workItem from="1711133522493" duration="2050000" />
+      <workItem from="1711139007984" duration="1457000" />
+      <workItem from="1711141957274" duration="960000" />
+      <workItem from="1711147078200" duration="598000" />
+      <workItem from="1712601872877" duration="87000" />
+      <workItem from="1712602468700" duration="4085000" />
+      <workItem from="1712688066430" duration="7142000" />
+      <workItem from="1712777521356" duration="2993000" />
+      <workItem from="1712864433875" duration="3431000" />
+      <workItem from="1713036173894" duration="7967000" />
+      <workItem from="1713119310885" duration="4943000" />
+      <workItem from="1713296378663" duration="5344000" />
+      <workItem from="1713375740932" duration="2315000" />
+      <workItem from="1713378155702" duration="9043000" />
     </task>
     <servers />
   </component>

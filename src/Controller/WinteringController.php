@@ -12,11 +12,19 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
+use function Symfony\Component\Clock\now;
 
 #[Route('/wintering')]
 #[isGranted('ROLE_USER')]
 class WinteringController extends AbstractController
 {
+    private $security;
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
+
     #[Route('/', name: 'app_wintering_index', methods: ['GET'])]
     public function index(WinteringRepository $winteringRepository): Response
     {
@@ -30,6 +38,8 @@ class WinteringController extends AbstractController
     #[Route('/new', name: 'app_wintering_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, Security $security): Response
     {
+        $isAdmin = $this->security->isGranted('ROLE_ADMIN');
+
         // Pobierz zalogowanego użytkownika
         $loggedInUser = $security->getUser();
         $wintering = new Wintering();
@@ -41,8 +51,25 @@ class WinteringController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($wintering);
-            $entityManager->flush();
+            $data = $form->getData();
+            $startDate = $data->getStartDate();
+            $endDate = $data->getEndDate();
+            $currentDate = now(); //today
+
+            // admin can enter data in the past
+            if($isAdmin) {
+                $entityManager->persist($wintering);
+                $entityManager->flush();
+            } else {
+                if($startDate <= $currentDate or $endDate <= $currentDate) {
+                    $this->addFlash('error', 'Błąd: data początkowa oraz końcowa nie może być w przeszłości');
+                } elseif($startDate >= $endDate) {
+                    $this->addFlash('error', 'Błąd: data końcowa nie może być szybciej niż data początkowa');
+                } else {
+                    $entityManager->persist($wintering);
+                    $entityManager->flush();
+                }
+            }
 
             return $this->redirectToRoute('app_wintering_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -64,13 +91,36 @@ class WinteringController extends AbstractController
     #[Route('/{id}/edit', name: 'app_wintering_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Wintering $wintering, EntityManagerInterface $entityManager): Response
     {
+        $isAdmin = $this->security->isGranted('ROLE_ADMIN');
+
         $form = $this->createForm(WinteringType::class, $wintering);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->flush();
 
-            return $this->redirectToRoute('app_wintering_index', [], Response::HTTP_SEE_OTHER);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $startDate = $data->getStartDate();
+            $endDate = $data->getEndDate();
+            $currentDate = now(); //today
+
+            // admin can enter data in the past
+            if($isAdmin) {
+                $entityManager->persist($wintering);
+                $entityManager->flush();
+                return $this->redirectToRoute('app_wintering_index', [], Response::HTTP_SEE_OTHER);
+            } else {
+                if($startDate <= $currentDate or $endDate <= $currentDate) {
+                    $this->addFlash('error', 'Błąd: data początkowa oraz końcowa nie może być w przeszłości');
+                } elseif($startDate >= $endDate) {
+                    $this->addFlash('error', 'Błąd: data końcowa nie może być szybciej niż data początkowa');
+                } else {
+                    $entityManager->flush();
+                    return $this->redirectToRoute('app_wintering_index', [], Response::HTTP_SEE_OTHER);
+                }
+            }
+
+
         }
 
         return $this->render('wintering/edit.html.twig', [

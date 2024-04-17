@@ -95,6 +95,13 @@
         <a href="{{ path('app_rfid_index') }}">
             <button class="contact__form-btn btn-special-animation spacer">RFID</button>
         </a>
+        <a href="{{ path('app_user_index') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Użytkownicy</button>
+        </a>
+    {% else %}
+        <a href="{{ path('app_user_index') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Zmień dane</button>
+        </a>
     {% endif %}
     </div>
 {% endblock %}

@@ -9,5 +9,12 @@
 
     <a href="{{ path('app_service_index') }}">back to list</a>
 
+    {# errors from ...       #}
+    {% for flashError in app.flashes('error') %}
+        <div class="flash-error">
+            {{ flashError }}
+        </div>
+    {% endfor %}
+
     {{ include('service/_delete_form.html.twig') }}
 {% endblock %}

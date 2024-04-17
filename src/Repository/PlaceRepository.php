@@ -83,4 +83,5 @@ class PlaceRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
         }
+
 }

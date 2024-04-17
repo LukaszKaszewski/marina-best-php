@@ -96,6 +96,13 @@
         </table>
     {% endif %}
 
+        {# wyświetla błedy daty, start pozniej niz koniec#}
+        {% for flashError in app.flashes('error') %}
+            <div class="flash-error">
+                {{ flashError }}
+            </div>
+        {% endfor %}
+
         <a href="{{ path('app_service_new') }}">Create new</a>
         <a href="{{ path('app_place_crud_index') }}">
             <button class="contact__form-btn btn-special-animation spacer">Panel użytkownika</button>

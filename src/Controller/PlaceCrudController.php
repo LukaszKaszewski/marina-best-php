@@ -35,7 +35,6 @@ class PlaceCrudController extends AbstractController
     #[Route('/new', name: 'app_place_crud_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, Security $security): Response
     {
-
         // Pobierz zalogowanego użytkownika
         $loggedInUser = $security->getUser();
         $place = new Place();

@@ -32,8 +32,8 @@
                             <td>{{ wintering.endDate ? wintering.endDate|date('Y-m-d') : '' }}</td>
                             <td>{{ wintering.description }}</td>
                             <td>
-                                <a href="{{ path('app_wintering_show', {'id': wintering.id}) }}">show</a>
-                                <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">edit</a>
+                                <a href="{{ path('app_wintering_show', {'id': wintering.id}) }}">Pokaż</a>
+                                <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">Edytuj</a>
                             </td>
                         </tr>
                     {% endfor %}
@@ -87,10 +87,16 @@
             </tbody>
         </table>
     {% endif %}
-
-        <a href="{{ path('app_wintering_new') }}">Create new</a>
+        {# errors from PlaceCrudcontroller       #}
+        {% for flashError in app.flashes('error') %}
+            <div class="flash-error">
+                {{ flashError }}
+            </div>
+        {% endfor %}
+        <a href="{{ path('app_wintering_new') }}">Zamów</a>
         <a href="{{ path('app_place_crud_index') }}">
             <button class="contact__form-btn btn-special-animation spacer">Panel użytkownika</button>
         </a>
+
     </div>
 {% endblock %}

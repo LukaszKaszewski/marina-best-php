@@ -24,11 +24,22 @@
         <div class="reg_form">
             {{ form_row(registrationForm.email) }}
         </div>
+        <div class="reg_form">
+            {{ form_row(registrationForm.phone) }}
+        </div>
         <div class="reg_form--terms">
             {{ form_row(registrationForm.agreeTerms) }}
         </div>
 
         <button type="submit" class="contact__form-btn btn-special-animation spacer">Zarejestruj</button>
         {{ form_end(registrationForm) }}
+
+        {# wyświetla błedy daty, start pozniej niz koniec#}
+        {% for flashError in app.flashes('error') %}
+            <div class="flash-error">
+                {{ flashError }}
+            </div>
+        {% endfor %}
+
     </div>
 {% endblock %}
