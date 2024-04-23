@@ -29,7 +29,7 @@
                             <td>{{ place.boatName }}</td>
                             <td>{{ place.keyNumber is not null ? place.keyNumber.number : '---' }}</td> {# if null, show nothing #}
                             <td>
-                                <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>
+{#                                <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>#}
                                 <a href="{{ path('app_place_crud_edit', {'id': place.id}) }}">Edytuj</a>
                             </td>
                         </tr>
@@ -39,7 +39,9 @@
                         <td colspan="6">Brak rezerwacji w bazie</td>
                     </tr>
                 {% endif %}
+
             </tbody>
+
         </table>
     {% else %}
         <table class="table">
@@ -63,7 +65,7 @@
                             <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>
                             <td>{{ place.boatName }}</td>
                             <td>
-                                <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>
+{#                                <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>#}
                                 <a href="{{ path('app_place_crud_edit', {'id': place.id}) }}">Edytuj</a>
                             </td>
                         </tr>
@@ -83,7 +85,9 @@
         </table>
     {% endif %}
 
-    <a href="{{ path('app_place_crud_new') }}">Zarezerwuj miejsce</a>
+    <a href="{{ path('app_place_crud_new') }}">
+        <button class="contact__form-btn btn-special-animation spacer">Zarezerwuj miejsce</button>
+    </a>
 
     <a href="{{ path('app_service_index') }}">
         <button class="contact__form-btn btn-special-animation spacer">Zamów serwis</button>

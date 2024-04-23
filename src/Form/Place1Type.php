@@ -64,7 +64,9 @@ class Place1Type extends AbstractType
                 'format' => 'dd MMMM y',
                 'label' => 'Data końcowa',
             ])
-            ->add('boat_name');
+            ->add('boat_name', null, [
+                'label' => 'Nazwa łodzi',
+            ]);
     }
 
 

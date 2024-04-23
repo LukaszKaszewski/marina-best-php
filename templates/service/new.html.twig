@@ -3,9 +3,13 @@
 {% block title %}New Service{% endblock %}
 
 {% block body %}
-    <h1>Create new Service</h1>
+    <div class="place">
+        <h1>Zamów serwis</h1>
 
-    {{ include('service/_form.html.twig') }}
+        {{ include('service/_form.html.twig') }}
 
-    <a href="{{ path('app_service_index') }}">back to list</a>
+        <a href="{{ path('app_service_index') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Powrót</button>
+        </a>
+    </div>
 {% endblock %}

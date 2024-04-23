@@ -3,9 +3,15 @@
 {% block title %}New Place{% endblock %}
 
 {% block body %}
-    <h1>Create new Place</h1>
+    <div class="place">
+        <h1>Zarezerwuj miejsce</h1>
 
-    {{ include('place_crud/_form.html.twig') }}
+        {{ include('place_crud/_form.html.twig') }}
 
-    <a href="{{ path('app_place_crud_index') }}">back to list</a>
+        <a href="{{ path('app_place_crud_index') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Powrót</button>
+        </a>
+
+    </div>
+
 {% endblock %}

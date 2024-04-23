@@ -623,7 +623,46 @@ body {
 			padding-bottom: 1.1em;
 		}
 	}
+
+	a {
+		font-weight: bold;
+		padding: 0 0.3em;
+		text-decoration: none;
+		color: $pure-white;
+	}
+
+	~ a {
+		color: red;
+	}
+
+	h2 {
+		padding: 0.3em;
+	}
+
+	.table {
+		background: rgba(42, 39, 39, 0.65);
+		padding: 0.7em;
+		border-radius: 7px;
+
+		a {
+			//border: 1px solid white;
+			border-radius: 3px;
+			background-color: $secondary-color;
+			padding: 0.2em;
+			margin: 0 0.2em;
+		}
+
+		td {
+			padding: 0.2em;
+			margin: 0.1em;
+		}
+
+		th {
+			padding: 0 0.7em 0.2em 0.7em;
+		}
+	}
 }
+
 
 .places {
 	&__map {
@@ -640,8 +679,10 @@ body {
 	padding:1em 0;
 }
 
-.reg_form {
-	//display: block;
+.reg_form,
+#place1,
+#service {
+	//display: flex;
 	padding: 0.5em;
 	background-color: rgba(47, 40, 40, 0.75);
 
@@ -652,7 +693,7 @@ body {
 	}
 
 	input {
-		display: flex;
+		//display: flex;
 		border-radius: 7px;
 		min-width: 250px;
 		height: 2em;
@@ -697,7 +738,7 @@ body {
 
 .spacer {
 	margin-top: 1em;
-	margin-bottom: 4em;
+	margin-bottom: 1em;
 }
 
 // remove img from /emailtnx

@@ -567,6 +567,36 @@ body {
   list-style: none;
   padding-bottom: 1.1em;
 }
+.place a {
+  font-weight: bold;
+  padding: 0 0.3em;
+  text-decoration: none;
+  color: #fff;
+}
+.place ~ a {
+  color: red;
+}
+.place h2 {
+  padding: 0.3em;
+}
+.place .table {
+  background: rgba(42, 39, 39, 0.65);
+  padding: 0.7em;
+  border-radius: 7px;
+}
+.place .table a {
+  border-radius: 3px;
+  background-color: #164dcc;
+  padding: 0.2em;
+  margin: 0 0.2em;
+}
+.place .table td {
+  padding: 0.2em;
+  margin: 0.1em;
+}
+.place .table th {
+  padding: 0 0.7em 0.2em 0.7em;
+}
 
 .places__map {
   width: 100%;
@@ -578,22 +608,29 @@ body {
   padding: 1em 0;
 }
 
-.reg_form {
+.reg_form,
+#place1,
+#service {
   padding: 0.5em;
   background-color: rgba(47, 40, 40, 0.75);
 }
-.reg_form label {
+.reg_form label,
+#place1 label,
+#service label {
   display: flex;
   justify-content: center;
   color: #fff;
 }
-.reg_form input {
-  display: flex;
+.reg_form input,
+#place1 input,
+#service input {
   border-radius: 7px;
   min-width: 250px;
   height: 2em;
 }
-.reg_form--terms div {
+.reg_form--terms div,
+#place1--terms div,
+#service--terms div {
   display: block;
   padding: 0.5em 0;
 }
@@ -617,7 +654,7 @@ body {
 
 .spacer {
   margin-top: 1em;
-  margin-bottom: 4em;
+  margin-bottom: 1em;
 }
 
 .bgeraser {

@@ -3,13 +3,16 @@
 {% block title %}Edit Service{% endblock %}
 
 {% block body %}
-    <h1>Edit Service</h1>
+<div class="place">
+    <h1>Edytuj serwis</h1>
 
-    {{ include('service/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('service/_form.html.twig', {'button_label': 'Aktualizuj'}) }}
 
-    <a href="{{ path('app_service_index') }}">back to list</a>
+    <a href="{{ path('app_service_index') }}">
+        <button class="contact__form-btn btn-special-animation spacer">Powrót</button>
+    </a>
 
-    {# errors from ...       #}
+    {# errors #}
     {% for flashError in app.flashes('error') %}
         <div class="flash-error">
             {{ flashError }}
@@ -17,4 +20,5 @@
     {% endfor %}
 
     {{ include('service/_delete_form.html.twig') }}
+</div>
 {% endblock %}
