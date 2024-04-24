@@ -59,10 +59,14 @@ class Place1Type extends AbstractType
             ->add('start_date', DateType::class, [
                 'format' => 'dd MMMM y',
                 'label' => 'Data początkowa',
+                'data' => new \DateTime(), // today date
+                'choice_translation_domain' => 'messages', // Tłumaczenie nazw miesięcy
             ])
             ->add('end_date', DateType::class, [
                 'format' => 'dd MMMM y',
                 'label' => 'Data końcowa',
+                'data' => new \DateTime(), // today date
+                'choice_translation_domain' => 'messages', // Tłumaczenie nazw miesięcy
             ])
             ->add('boat_name', null, [
                 'label' => 'Nazwa łodzi',

@@ -12,7 +12,9 @@ class RfidType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('number')
+            ->add('number', null, [
+                'label' => 'Numer klucza',
+            ])
             ->add('key_code')
         ;
     }

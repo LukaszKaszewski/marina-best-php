@@ -20,8 +20,7 @@
             <th>Email</th>
             <th>Data utworzenia</th>
             <th>Telefon</th>
-            <th>Akcja</th>
-        </tr>
+         </tr>
         </thead>
         <tbody>
         {% for user in users %}
@@ -54,7 +53,6 @@
                 <th>Nazwisko</th>
                 <th>Email</th>
                 <th>Telefon</th>
-                <th>Akcja</th>
             </tr>
             </thead>
             <tbody>
@@ -67,7 +65,7 @@
                     <td>{{ user.email }}</td>
                     <td>{{ user.phone }}</td>
                     <td>
-                        <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+                        <a href="{{ path('app_user_edit', {'id': user.id}) }}">Edytuj</a>
                     </td>
                 </tr>
 {#            {% endfor %}#}

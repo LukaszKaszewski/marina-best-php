@@ -148,7 +148,7 @@ body {
   display: block;
   margin: 0.5em;
   padding: 0.5em 2em;
-  font-size: 2.8rem;
+  font-size: 2rem;
   text-decoration: none;
   color: #fff;
   z-index: 0;
@@ -580,9 +580,11 @@ body {
   padding: 0.3em;
 }
 .place .table {
+  width: 50vh;
   background: rgba(42, 39, 39, 0.65);
   padding: 0.7em;
   border-radius: 7px;
+  font-size: 1rem;
 }
 .place .table a {
   border-radius: 3px;
@@ -594,8 +596,14 @@ body {
   padding: 0.2em;
   margin: 0.1em;
 }
+.place .table td:last-child {
+  display: flex;
+}
 .place .table th {
-  padding: 0 0.7em 0.2em 0.7em;
+  padding: 0;
+}
+.place .table td {
+  font-size: 1.1rem;
 }
 
 .places__map {
@@ -610,27 +618,39 @@ body {
 
 .reg_form,
 #place1,
-#service {
+#service,
+#wintering,
+#user,
+#rfid {
   padding: 0.5em;
   background-color: rgba(47, 40, 40, 0.75);
 }
 .reg_form label,
 #place1 label,
-#service label {
+#service label,
+#wintering label,
+#user label,
+#rfid label {
   display: flex;
   justify-content: center;
   color: #fff;
 }
 .reg_form input,
 #place1 input,
-#service input {
+#service input,
+#wintering input,
+#user input,
+#rfid input {
   border-radius: 7px;
   min-width: 250px;
   height: 2em;
 }
 .reg_form--terms div,
 #place1--terms div,
-#service--terms div {
+#service--terms div,
+#wintering--terms div,
+#user--terms div,
+#rfid--terms div {
   display: block;
   padding: 0.5em 0;
 }
@@ -688,11 +708,17 @@ body {
     margin-bottom: 0;
     max-height: 300px;
   }
+  .place .table {
+    font-size: 1.3rem;
+  }
 }
 @media (min-width: 768px) {
   .burger-btn {
     top: 130px;
     right: 20px;
+  }
+  .nav__item {
+    font-size: 3rem;
   }
   .sticky {
     top: 30px;
@@ -760,6 +786,15 @@ body {
   }
   .place {
     height: 75vh;
+  }
+  .place .table {
+    font-size: 1.4rem;
+  }
+  .place .table th {
+    padding: 0 1.4em 0.2em 1.4em;
+  }
+  .place .table td {
+    font-size: 1.1rem;
   }
   .place__result {
     width: 35em;
@@ -878,6 +913,12 @@ body {
   }
   .news-option-img {
     height: 300px;
+  }
+  .place .table {
+    font-size: 1.8rem;
+  }
+  .place .table td {
+    font-size: 1.4rem;
   }
   .place__result {
     width: 45em;

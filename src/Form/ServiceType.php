@@ -61,6 +61,8 @@ class ServiceType extends AbstractType
             ->add('date', DateType::class, [
                 'format' => 'dd MMMM y',
                 'label' => 'Data: ',
+                'data' => new \DateTime(), // today date
+                'choice_translation_domain' => 'messages', // Tłumaczenie nazw miesięcy
             ])
             ->add('boat_name', null, [
                 'label' => 'Nazwa jednostki: ',

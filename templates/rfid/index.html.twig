@@ -3,38 +3,41 @@
 {% block title %}Rfid index{% endblock %}
 
 {% block body %}
-    <h1>Rfid index</h1>
+    <div class="place">
+        <h1>RFID</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Number</th>
-                <th>Key_code</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for rfid in rfids %}
-            <tr>
-                <td>{{ rfid.id }}</td>
-                <td>{{ rfid.number }}</td>
-                <td>{{ rfid.keyCode }}</td>
-                <td>
-                    <a href="{{ path('app_rfid_show', {'id': rfid.id}) }}">show</a>
-                    <a href="{{ path('app_rfid_edit', {'id': rfid.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Numer</th>
+                    <th>Key code</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for rfid in rfids %}
+                <tr>
+                    <td>{{ rfid.id }}</td>
+                    <td>{{ rfid.number }}</td>
+                    <td>{{ rfid.keyCode }}</td>
+                    <td>
+{#                        <a href="{{ path('app_rfid_show', {'id': rfid.id}) }}">show</a>#}
+                        <a href="{{ path('app_rfid_edit', {'id': rfid.id}) }}">Edytuj</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('app_rfid_new') }}">Create new</a>
-    <a href="{{ path('app_place_crud_index') }}">
-        <button class="contact__form-btn btn-special-animation spacer">Panel użytkownika</button>
-    </a>
+        <a href="{{ path('app_rfid_new') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Dodaj klucz</button>
+        </a>
+        <a href="{{ path('app_place_crud_index') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Panel użytkownika</button>
+        </a>
+    </div>
 {% endblock %}

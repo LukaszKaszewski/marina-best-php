@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Entity\Wintering;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Security\Core\Security;
@@ -36,11 +37,27 @@ class WinteringType extends AbstractType
                     'style' => !$isAdmin ? 'display: none;' : ''
                 ]
             ])
-            ->add('boat_name')
-            ->add('boat_length')
-            ->add('boat_width')
-            ->add('start_date')
-            ->add('end_date')
+            ->add('boat_name', null, [
+                'label' => 'Nazwa jednostki: ',
+            ])
+            ->add('boat_length', null, [
+                'label' => 'Długość: ',
+            ])
+            ->add('boat_width', null, [
+                'label' => 'Szerokość: ',
+            ])
+            ->add('start_date', DateType::class, [
+                'format' => 'dd MMMM y',
+                'label' => 'Data początkowa: ',
+                'data' => new \DateTime(), // today date
+                'choice_translation_domain' => 'messages', // Tłumaczenie nazw miesięcy
+            ])
+            ->add('end_date', DateType::class, [
+                'format' => 'dd MMMM y',
+                'label' => 'Data końcowa: ',
+                'data' => new \DateTime(), // today date
+                'choice_translation_domain' => 'messages', // Tłumaczenie nazw miesięcy
+            ])
             ->add('description', null, [
                 'label' => 'Opis: ',
                 // add style to hide field if user is not admin

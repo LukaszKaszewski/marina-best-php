@@ -3,9 +3,13 @@
 {% block title %}New Rfid{% endblock %}
 
 {% block body %}
-    <h1>Create new Rfid</h1>
+    <div class="place">
+    <h1>Dodaj nowy klucz</h1>
 
     {{ include('rfid/_form.html.twig') }}
 
-    <a href="{{ path('app_rfid_index') }}">back to list</a>
+    <a href="{{ path('app_rfid_index') }}">
+        <button class="contact__form-btn btn-special-animation spacer">Powrót</button>
+    </a>
+    </div>
 {% endblock %}

@@ -3,18 +3,22 @@
 {% block title %}Edit Wintering{% endblock %}
 
 {% block body %}
-    <h1>Edytuj zimowane</h1>
+    <div class="place">
+        <h1>Edytuj zimowane</h1>
 
-    {{ include('wintering/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('wintering/_form.html.twig', {'button_label': 'Aktualizuj'}) }}
 
-    <a href="{{ path('app_wintering_index') }}">Powrót</a>
+        <a href="{{ path('app_wintering_index') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Powrót</button>
+        </a>
 
-    {# wyświetla błedy daty, start pozniej niz koniec#}
-    {% for flashError in app.flashes('error') %}
-        <div class="flash-error">
-            {{ flashError }}
-        </div>
-    {% endfor %}
+        {# wyświetla błedy daty, start pozniej niz koniec#}
+        {% for flashError in app.flashes('error') %}
+            <div class="flash-error">
+                {{ flashError }}
+            </div>
+        {% endfor %}
 
-    {{ include('wintering/_delete_form.html.twig') }}
+        {{ include('wintering/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

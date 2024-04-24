@@ -125,7 +125,7 @@ body {
 		display: block;
 		margin: 0.5em;
 		padding: 0.5em 2em;
-		font-size: 2.8rem;
+		font-size: 2rem;
 		text-decoration: none;
 		color: $pure-white;
 		z-index: 0;
@@ -640,9 +640,11 @@ body {
 	}
 
 	.table {
+		width: 50vh;
 		background: rgba(42, 39, 39, 0.65);
 		padding: 0.7em;
 		border-radius: 7px;
+		font-size: 1rem;
 
 		a {
 			//border: 1px solid white;
@@ -657,8 +659,16 @@ body {
 			margin: 0.1em;
 		}
 
+		td:last-child {
+			display: flex;
+		}
+
 		th {
-			padding: 0 0.7em 0.2em 0.7em;
+			padding: 0;
+		}
+
+		td {
+			font-size: 1.1rem;
 		}
 	}
 }
@@ -681,7 +691,10 @@ body {
 
 .reg_form,
 #place1,
-#service {
+#service,
+#wintering,
+#user,
+#rfid {
 	//display: flex;
 	padding: 0.5em;
 	background-color: rgba(47, 40, 40, 0.75);
@@ -786,12 +799,24 @@ body {
 			max-height: 300px;
 		}
 	}
+
+	.place {
+		.table {
+			font-size: 1.3rem;
+		}
+	}
 }
 
 @media (min-width: 768px) {
 	.burger-btn {
 		top: 130px;
 		right: 20px;
+	}
+
+	.nav {
+		&__item {
+		font-size: 3rem;
+	}
 	}
 
 	.sticky {
@@ -891,6 +916,20 @@ body {
 
 	.place {
 		height: 75vh; // 100
+
+		.table {
+			font-size: 1.4rem;
+
+			th {
+				padding: 0 1.4em 0.2em 1.4em;
+			}
+			td {
+				font-size: 1.1rem;
+			}
+		}
+
+
+
 		&__result {
 			width: 35em;
 			column-count: 3;
@@ -1046,6 +1085,16 @@ body {
 	}
 
 	.place {
+		.table {
+			font-size: 1.8rem;
+
+			td {
+				font-size: 1.4rem;
+			}
+		}
+
+
+
 		&__result {
 			width: 45em;
 			column-count: 4;

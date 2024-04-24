@@ -32,7 +32,7 @@
                             <td>{{ wintering.endDate ? wintering.endDate|date('Y-m-d') : '' }}</td>
                             <td>{{ wintering.description }}</td>
                             <td>
-                                <a href="{{ path('app_wintering_show', {'id': wintering.id}) }}">Pokaż</a>
+{#                                <a href="{{ path('app_wintering_show', {'id': wintering.id}) }}">Pokaż</a>#}
                                 <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">Edytuj</a>
                             </td>
                         </tr>
@@ -68,8 +68,8 @@
                             <td>{{ wintering.startDate ? wintering.startDate|date('Y-m-d') : '' }}</td>
                             <td>{{ wintering.endDate ? wintering.endDate|date('Y-m-d') : '' }}</td>
                             <td>
-                                <a href="{{ path('app_wintering_show', {'id': wintering.id}) }}">show</a>
-                                <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">edit</a>
+{#                                <a href="{{ path('app_wintering_show', {'id': wintering.id}) }}">show</a>#}
+                                <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">Edytuj</a>
                             </td>
                         </tr>
                         {% endif %}
@@ -93,7 +93,9 @@
                 {{ flashError }}
             </div>
         {% endfor %}
-        <a href="{{ path('app_wintering_new') }}">Zamów</a>
+        <a href="{{ path('app_wintering_new') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Zamów</button>
+        </a>
         <a href="{{ path('app_place_crud_index') }}">
             <button class="contact__form-btn btn-special-animation spacer">Panel użytkownika</button>
         </a>
