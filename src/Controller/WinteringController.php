@@ -40,12 +40,12 @@ class WinteringController extends AbstractController
     {
         $isAdmin = $this->security->isGranted('ROLE_ADMIN');
 
-        // Pobierz zalogowanego użytkownika
+        // get logged usre
         $loggedInUser = $security->getUser();
         $wintering = new Wintering();
         $form = $this->createForm(WinteringType::class, $wintering);
 
-        // Ustaw domyślną wartość user_id jako id zalogowanego użytkownika
+        // set default value as logged user
         $form->get('user_id')->setData($loggedInUser);
 
         $form->handleRequest($request);
@@ -96,8 +96,6 @@ class WinteringController extends AbstractController
         $form = $this->createForm(WinteringType::class, $wintering);
         $form->handleRequest($request);
 
-
-
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
             $startDate = $data->getStartDate();
@@ -108,7 +106,7 @@ class WinteringController extends AbstractController
             if($isAdmin) {
                 $entityManager->persist($wintering);
                 $entityManager->flush();
-                return $this->redirectToRoute('app_wintering_index', [], Response::HTTP_SEE_OTHER);
+
             } else {
                 if($startDate <= $currentDate or $endDate <= $currentDate) {
                     $this->addFlash('error', 'Błąd: data początkowa oraz końcowa nie może być w przeszłości');
@@ -116,11 +114,10 @@ class WinteringController extends AbstractController
                     $this->addFlash('error', 'Błąd: data końcowa nie może być szybciej niż data początkowa');
                 } else {
                     $entityManager->flush();
-                    return $this->redirectToRoute('app_wintering_index', [], Response::HTTP_SEE_OTHER);
                 }
             }
 
-
+            return $this->redirectToRoute('app_wintering_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('wintering/edit.html.twig', [

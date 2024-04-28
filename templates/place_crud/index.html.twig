@@ -43,6 +43,12 @@
             </tbody>
 
         </table>
+        {# errors from PlaceCrudcontroller       #}
+        {% for flashError in app.flashes('error') %}
+            <div class="flash-error">
+                {{ flashError }}
+            </div>
+        {% endfor %}
     {% else %}
         <table class="table">
             <thead>
@@ -83,6 +89,12 @@
             {% endif %}
             </tbody>
         </table>
+        {# errors from PlaceCrudcontroller       #}
+        {% for flashError in app.flashes('error') %}
+            <div class="flash-error">
+                {{ flashError }}
+            </div>
+        {% endfor %}
     {% endif %}
 
     <a href="{{ path('app_place_crud_new') }}">

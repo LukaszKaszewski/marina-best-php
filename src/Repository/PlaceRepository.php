@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\User;
 use App\Entity\Place;
+use App\Form\PlaceType;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -22,30 +23,6 @@ class PlaceRepository extends ServiceEntityRepository
         parent::__construct($registry, Place::class);
     }
 
-//    /**
-//     * @return Place[] Returns an array of Place objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('p.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Place
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
     public function findByIsTaken($sd, $ed)
     {
         // wyszukiwanie zajętych pozycji
@@ -83,5 +60,33 @@ class PlaceRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
         }
+
+    public function checkNewPlaces($sd, $ed, $num)
+    {
+        // search conflict position
+        $busyPlaces = $this->createQueryBuilder('p')
+            ->andWhere('p.number = :number')
+            ->andWhere('p.end_date >= :start_date')
+            ->andWhere('p.start_date <= :end_date')
+            ->setParameter('number', $num)
+            ->setParameter('start_date', $sd)
+            ->setParameter('end_date', $ed)
+            ->getQuery()
+            ->getResult();
+
+        // array with conflict position
+        // if null -> add new entry
+        $busyPlaceNumbers = [];
+        foreach ($busyPlaces as $place) {
+            $busyPlaceNumbers[] = $place->getNumber();
+        }
+
+        return $busyPlaceNumbers;
+    }
+
+
+
+
+
 
 }

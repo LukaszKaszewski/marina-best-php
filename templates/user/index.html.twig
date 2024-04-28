@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="place">
-    <h2>Dane użytkownika {{ user.username }}</h2>
+    <h2>Dane użytkowników</h2>
 
 
     {% if is_granted('ROLE_ADMIN') %}
@@ -35,14 +35,16 @@
                 <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ user.phone }}</td>
                 <td>
-                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+{#                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>#}
+                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">Edytuj</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-        <a href="{{ path('app_user_new') }}">Create new</a>
+        <a href="{{ path('app_user_new') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Dodaj nowego użytkownika</button>
+        </a>
     {% else %}
         <table class="table">
             <thead>

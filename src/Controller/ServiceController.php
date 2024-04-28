@@ -40,12 +40,12 @@ class ServiceController extends AbstractController
     {
         $isAdmin = $this->security->isGranted('ROLE_ADMIN');
 
-        // Pobierz zalogowanego użytkownika
+        // get logged user
         $loggedInUser = $security->getUser();
         $service = new Service();
         $form = $this->createForm(ServiceType::class, $service);
 
-        // Ustaw domyślną wartość user_id jako id zalogowanego użytkownika
+        // set default value as logged user
         $form->get('user_id')->setData($loggedInUser);
 
         $form->handleRequest($request);
@@ -55,6 +55,7 @@ class ServiceController extends AbstractController
             $startDate = $data->getDate();
             $currentDate = now(); //today
 
+            // admin can enter data in the past
             if($isAdmin) {
                 $entityManager->persist($service);
                 $entityManager->flush();
@@ -100,16 +101,15 @@ class ServiceController extends AbstractController
             if($isAdmin) {
                 $entityManager->persist($service);
                 $entityManager->flush();
-                return $this->redirectToRoute('app_service_index', [], Response::HTTP_SEE_OTHER);
             } else {
                 if($startDate <= $currentDate) {
                     $this->addFlash('error', 'Błąd: data początkowa nie może być w przeszłości');
                 } else {
                     $entityManager->persist($service);
                     $entityManager->flush();
-                    return $this->redirectToRoute('app_service_index', [], Response::HTTP_SEE_OTHER);
                 }
             }
+            return $this->redirectToRoute('app_service_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('service/edit.html.twig', [
