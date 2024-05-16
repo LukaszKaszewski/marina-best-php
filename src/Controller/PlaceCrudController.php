@@ -33,7 +33,6 @@ class PlaceCrudController extends AbstractController
 
         $reservation = $placeRepository->reservation();
 
-
         return $this->render('place_crud/index.html.twig', [
             'places' => $placeRepository->findAll(),
             'user' => $user,
@@ -45,7 +44,6 @@ class PlaceCrudController extends AbstractController
     #[Route('/new', name: 'app_place_crud_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, Security $security, PlaceRepository $placeRepository): Response
     {
-
         $isAdmin = $this->security->isGranted('ROLE_ADMIN');
 
         // get logged user
@@ -92,13 +90,8 @@ class PlaceCrudController extends AbstractController
                         $entityManager->flush();
                         $this->addFlash('error',  'Zarezerwowano miejsce nr (' . $placeNumber . ')');
                     }
-
-
-
                 }
             }
-
-
             // after flush() back to index
             return $this->redirectToRoute('app_place_crud_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -118,8 +111,10 @@ class PlaceCrudController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_place_crud_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Place $place, EntityManagerInterface $entityManager, Security $security): Response
+    public function edit(Request $request, Place $place, EntityManagerInterface $entityManager, Security $security, PlaceRepository $placeRepository): Response
     {
+        $isAdmin = $this->security->isGranted('ROLE_ADMIN');
+
         // get logged user
         $loggedInUser = $security->getUser();
 
@@ -130,7 +125,40 @@ class PlaceCrudController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->flush();
+            $data = $form->getData();
+            $startDate = $data->getStartDate();
+            $endDate = $data->getEndDate();
+            $placeNumber = $data->getNumber();
+            $currentDate = now(); //today
+
+            $newPlace = $placeRepository->checkNewPlaces($startDate, $endDate, $placeNumber);
+
+            if($isAdmin) {
+                if($newPlace) {
+                    $this->addFlash('error',  'We wskazanym terminie, miejsce nr (' . $placeNumber . ') jest już zarezerwowane');
+                } else {
+                    $entityManager->persist($place);
+                    $entityManager->flush();
+                    $this->addFlash('error',  'Zarezerwowano miejsce nr (' . $placeNumber . ')');
+                }
+            } else {
+                if($newPlace) {
+                    $this->addFlash('error',  'We wskazanym terminie, miejsce nr (' . $placeNumber . ') jest już zarezerwowane');
+                } else {
+                    if ($startDate > $endDate) {
+                        $this->addFlash('error', 'Data początkowa nie może być większa od daty końcowej');
+                        // var_dump('Data początkowa nie może być większa od daty końcowej');
+                    } elseif ($startDate < $currentDate || $endDate < $currentDate) {
+                        $this->addFlash('error', 'Możesz rezerwować tylko terminy w przyszłości');
+                        // var_dump('Nie można wybrać daty wcześniejszej niż dzisiejsza');
+                    } else {
+                        $entityManager->persist($place);
+                        $entityManager->flush();
+                        $this->addFlash('error',  'Zarezerwowano miejsce nr (' . $placeNumber . ')');
+                    }
+                }
+            }
+//            $entityManager->flush();
 
             // after flush() back to index
             return $this->redirectToRoute('app_place_crud_index', [], Response::HTTP_SEE_OTHER);

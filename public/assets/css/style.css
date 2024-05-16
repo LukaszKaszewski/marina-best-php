@@ -205,7 +205,7 @@ body {
   height: 100vh;
   text-align: center;
   color: #fff;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../img/chiayi_port_640.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../img/chiayi_port_1920.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -272,6 +272,10 @@ body {
 .offers__img {
   border-radius: 15px;
 }
+.offers__payment {
+  margin-bottom: 0;
+  max-width: 90vw;
+}
 
 .hero-img {
   position: relative;
@@ -301,7 +305,7 @@ body {
   perspective: 1500px;
 }
 .price__card:hover .price__card-img {
-  transform: rotateY(-180deg);
+  transform: rotateY(180deg);
   opacity: 0;
 }
 .price__card:hover .price__card-info {
@@ -375,6 +379,14 @@ body {
 .price__card-info-list-item:last-child {
   border-bottom: none;
 }
+.price__card-info-list-itemTop {
+  padding: 2em 0.3em;
+  font-size: 1.7rem;
+  border-top: 1px solid #eee;
+}
+.price__card-info-list-itemTop:last-child {
+  border-bottom: none;
+}
 .price__card-info-btn {
   position: absolute;
   left: 50%;
@@ -426,7 +438,7 @@ body {
 }
 .news__option-text {
   margin-bottom: 0.5em;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   color: #2e2e2e;
 }
 .news__option-btn {
@@ -520,10 +532,10 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 2em;
-  height: 100vh;
+  height: auto;
   text-align: center;
   color: #fff;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../img/chiayi_port_640.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../img/chiayi_port_1920.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -578,6 +590,47 @@ body {
 }
 .place h2 {
   padding: 0.3em;
+}
+.place .tile {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.5rem;
+  justify-content: center;
+}
+.place .tile thead {
+  display: inline-block;
+  padding: 0.7em;
+  margin-left: 0.3em;
+  margin-bottom: 1em;
+  background: rgba(42, 39, 39, 0.65);
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  text-align: left;
+}
+.place .tile tbody {
+  display: inline-block;
+  padding: 0.7em;
+  margin-right: 0.3em;
+  margin-bottom: 1em;
+  background: rgba(42, 39, 39, 0.65);
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  text-align: center;
+}
+.place .tile tr {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.place .tile th,
+.place .tile td {
+  padding: 0.2em;
+}
+.place .tile td:last-child {
+  text-align: right;
+}
+.place .tile a {
+  color: #00ffaa;
 }
 .place .table {
   width: 50vh;
@@ -708,6 +761,9 @@ body {
     margin-bottom: 0;
     max-height: 300px;
   }
+  .offers__payment {
+    max-width: 80vw;
+  }
   .place .table {
     font-size: 1.3rem;
   }
@@ -745,8 +801,14 @@ body {
   .offers__text {
     font-size: 1.8rem;
   }
+  .offers__payment {
+    max-width: 70vw;
+  }
   .hero-img {
     padding: 30rem 2em;
+  }
+  .hero-img__text {
+    padding: 1.3em 4em;
   }
   .hero-img hr {
     margin: 0 auto;
@@ -785,7 +847,7 @@ body {
     padding: 1em;
   }
   .place {
-    height: 75vh;
+    min-height: 100vh;
   }
   .place .table {
     font-size: 1.4rem;
@@ -891,8 +953,11 @@ body {
   .offers__title {
     font-size: 3.3rem;
   }
-  .offers_-text {
+  .offers__text {
     font-size: 2.2rem;
+  }
+  .offers__payment {
+    max-width: 65vw;
   }
   .hero-img {
     padding: 15rem 2em;
@@ -900,6 +965,10 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+  }
+  .hero-img__text {
+    font-size: 2rem;
+    padding: 1.6em 6em;
   }
   .hero-img__title {
     font-size: 7rem;
@@ -932,6 +1001,13 @@ body {
   .place__result {
     width: 60em;
     column-count: 5;
+  }
+  .offers__payment {
+    max-width: 40vw;
+  }
+  .hero-img__text {
+    font-size: 2.2rem;
+    padding: 1.8em 10em;
   }
 }
 .navPanel__items {

@@ -46,7 +46,12 @@
             </tbody>
         </table>
     {% else %}
-        <table class="table">
+        <table class="tile">
+            {% if services is not empty %}
+            {% set hasUserPlaces = false %}
+            {% for service in services %}
+            {% if user.username == service.userId.username %}
+            {% set hasUserPlaces = true %}
             <thead>
                 <tr>
                     <th>Nazwa jednostki</th>
@@ -59,11 +64,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% if services is not empty %}
-                    {% set hasUserPlaces = false %}
-                    {% for service in services %}
-                        {% if user.username == service.userId.username %}
-                        {% set hasUserPlaces = true %}
+
                             <tr>
                                 <td>{{ service.boatName }}</td>
                                 <td>{{ service.date ? service.date|date('Y-m-d') : '' }}</td>

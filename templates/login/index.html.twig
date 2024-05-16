@@ -23,7 +23,13 @@
           is redirected to on success (more details below)
           <input type="hidden" name="_target_path" value="/account" /> #}
 
-            <button type="submit" class="contact__form-btn btn-special-animation spacer">login</button>
+            {% for flashError in app.flashes('error') %}
+                <div class="flash-error">
+                    {{ flashError }}
+                </div>
+            {% endfor %}
+
+            <button type="submit" class="contact__form-btn btn-special-animation spacer">Login</button>
         </form>
         <div>Nie posiadasz konta? Dołącz do nas!</div>
         <a href="{{ path('app_register') }}">

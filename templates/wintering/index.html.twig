@@ -45,7 +45,12 @@
             </tbody>
         </table>
     {% else %}
-        <table class="table">
+        <table class="tile">
+            {% if winterings is not empty %}
+            {% set hasUserPlaces = false %}
+            {% for wintering in winterings %}
+            {% if user.username == wintering.userId.username %}
+            {% set hasUserPlaces = true %}
             <thead>
             <tr>
                 <th>Jednostki</th>
@@ -56,11 +61,7 @@
             </tr>
             </thead>
             <tbody>
-                {% if winterings is not empty %}
-                    {% set hasUserPlaces = false %}
-                    {% for wintering in winterings %}
-                        {% if user.username == wintering.userId.username %}
-                        {% set hasUserPlaces = true %}
+
                         <tr>
                             <td>{{ wintering.boatName }}</td>
                             <td>{{ wintering.boatLength }}</td>

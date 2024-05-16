@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PaymentController!{% endblock %}
+
+{% block body %}
+<div class="place">
+    <img
+            src="./{{ asset('assets/docs/cennik.jpg') }}"
+            alt="cennik"
+            class="offers__payment"
+    />
+    <div>
+        <a href="{{ path('app_index') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Strona główna</button>
+        </a>
+        {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('app_place_crud_index') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Panel użytkownika</button>
+        </a>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}

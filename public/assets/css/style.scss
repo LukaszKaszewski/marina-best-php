@@ -195,7 +195,7 @@ body {
 	height: 100vh; // 75
 	text-align: center;
 	color: $pure-white;
-	@include heroImages("../img/chiayi_port_640.jpg");
+	@include heroImages("../img/chiayi_port_1920.jpg");
 	background-attachment: scroll;
 
 	&__heading {
@@ -274,6 +274,11 @@ body {
 	&__img {
 		border-radius: 15px;
 	}
+
+	&__payment {
+		margin-bottom: 0;
+		max-width: 90vw;
+	}
 }
 
 // about
@@ -308,7 +313,7 @@ body {
 
 		&:hover {
 			.price__card-img {
-				transform: rotateY(-180deg);
+				transform: rotateY(180deg);
 				opacity: 0;
 			}
 
@@ -394,6 +399,20 @@ body {
 					&:last-child {
 						border-bottom: none;
 					}
+
+
+				}
+
+				&-itemTop {
+					padding: 2em 0.3em;
+					font-size: 1.7rem;
+					border-top: 1px solid $light-white;
+
+					&:last-child {
+						border-bottom: none;
+					}
+
+
 				}
 			}
 
@@ -459,7 +478,7 @@ body {
 
 		&-text {
 			margin-bottom: 0.5em;
-			font-size: 1.4rem;
+			font-size: 1.7rem;
 			color: $dark;
 		}
 
@@ -569,11 +588,13 @@ body {
 	align-items: center;
 	flex-direction: column;
 	padding: 2em;
-	height: 100vh; // 100
+	height: auto; // 100
 	text-align: center;
 	color: $pure-white;
-	@include heroImages("../img/chiayi_port_640.jpg");
+	@include heroImages("../img/chiayi_port_1920.jpg");
 	background-attachment: scroll;
+
+
 
 	&__info {
 		font-size: 2rem;
@@ -637,6 +658,58 @@ body {
 
 	h2 {
 		padding: 0.3em;
+	}
+
+	.tile {
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 1.5rem;
+		justify-content: center;
+
+		thead {
+			display: inline-block;
+			padding: 0.7em;
+			margin-left: 0.3em;
+			margin-bottom: 1em;
+			background: rgba(42, 39, 39, 0.65);
+			border-top-left-radius: 7px;
+			border-bottom-left-radius: 7px;
+			text-align: left;
+		}
+
+		tbody {
+			display: inline-block;
+			padding: 0.7em;
+			margin-right: 0.3em;
+			margin-bottom: 1em;
+			background: rgba(42, 39, 39, 0.65);
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+			text-align: center;
+
+		}
+
+		tr {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+		}
+
+		th,
+		td {
+			padding: 0.2em;
+		}
+
+		td:last-child {
+			text-align: right;
+			//color: $main-color;
+		}
+
+		a {
+			color: $green-color;
+		}
+
+
 	}
 
 	.table {
@@ -798,6 +871,10 @@ body {
 			margin-bottom: 0;
 			max-height: 300px;
 		}
+
+		&__payment {
+			max-width: 80vw;
+		}
 	}
 
 	.place {
@@ -859,10 +936,17 @@ body {
 		&__text {
 			font-size: 1.8rem;
 		}
+		&__payment {
+			max-width: 70vw;
+		}
 	}
 
 	.hero-img {
 		padding: 30rem 2em;
+
+		&__text {
+			padding: 1.3em 4em;
+		}
 
 		hr {
 			margin: 0 auto;
@@ -915,7 +999,7 @@ body {
 	}
 
 	.place {
-		height: 75vh; // 100
+		min-height: 100vh; // 100
 
 		.table {
 			font-size: 1.4rem;
@@ -1054,14 +1138,23 @@ body {
 			font-size: 3.3rem;
 		}
 
-		&_-text {
+		&__text {
 			font-size: 2.2rem;
+		}
+
+		&__payment {
+			max-width: 65vw;
 		}
 	}
 
 	.hero-img {
 		padding: 15rem 2em;
 		@include heroImages("../img/boats_1920.jpg");
+
+		&__text {
+			font-size: 2rem;
+			padding: 1.6em 6em;
+		}
 
 		&__title {
 			font-size: 7rem;
@@ -1115,6 +1208,20 @@ body {
 			column-count: 5;
 		}
 	}
+
+	.offers {
+		&__payment {
+			max-width: 40vw;
+		}
+	}
+
+	.hero-img {
+		&__text {
+			font-size: 2.2rem;
+			padding: 1.8em 10em;
+		}
+	}
+
 }
 
 
