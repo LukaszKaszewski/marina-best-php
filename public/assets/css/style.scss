@@ -29,7 +29,6 @@ body {
 }
 
 // navigo
-
 .burger-btn {
 	position: fixed;
 	width: 60px;
@@ -167,6 +166,18 @@ body {
 			height: 50%;
 		}
 	}
+}
+
+.black-nav-icon,
+.black-nav-icon::before,
+.black-nav-icon::after {
+	background-color: $dark;
+}
+
+.black-nav-circle,
+.black-nav-circle::before,
+.black-nav-circle::after {
+	border: 4px solid $dark;
 }
 
 @keyframes navigoAnimation {
@@ -311,6 +322,7 @@ body {
 		// pict depth
 		perspective: 1500px;
 
+
 		&:hover {
 			.price__card-img {
 				transform: rotateY(180deg);
@@ -427,10 +439,16 @@ body {
 				border: none;
 				background-color: rgb(170, 9, 170);
 				cursor: pointer;
+				color: $pure-white;
 
 				&::before {
 					background-color: yellow;
+					color: black;
 				}
+			}
+
+			&-btn:hover {
+				color: black;
 			}
 		}
 	}
@@ -1139,7 +1157,7 @@ body {
 		}
 
 		&__text {
-			font-size: 2.2rem;
+			font-size: 1.8rem;
 		}
 
 		&__payment {
@@ -1210,6 +1228,10 @@ body {
 	}
 
 	.offers {
+		&__text {
+			font-size: 2rem;
+		}
+
 		&__payment {
 			max-width: 40vw;
 		}

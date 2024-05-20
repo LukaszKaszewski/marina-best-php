@@ -19,22 +19,47 @@
                 </tr>
             </thead>
             <tbody>
-                {% if places is not empty %}
-                    {% for place in places %}
+{#                {% if places is not empty %}#}
+{#                    {% for place in places %}#}
+{#                        <tr>#}
+{#                            <td>{{ place.userId.username }}</td>#}
+{#                            <td>{{ place.number }}</td>#}
+{#                            <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>#}
+{#                            <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>#}
+{#                            <td>{{ place.boatName }}</td>#}
+{#                            <td>{{ place.keyNumber is not null ? place.keyNumber.number : '---' }}</td> #}{# if null, show nothing #}
+{#                            <td>#}
+{#                                <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>#}
+{#                                <a href="{{ path('app_place_crud_edit', {'id': place.id}) }}">Edytuj</a>#}
+{#                            </td>#}
+{#                        </tr>#}
+{#                    {% endfor %}#}
+{#                {% else %}#}
+
+                {% if reservationBySD is not empty %}
+                    {% for resBySD in reservationBySD %}
                         <tr>
-                            <td>{{ place.userId.username }}</td>
-                            <td>{{ place.number }}</td>
-                            <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>
-                            <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>
-                            <td>{{ place.boatName }}</td>
-                            <td>{{ place.keyNumber is not null ? place.keyNumber.number : '---' }}</td> {# if null, show nothing #}
+                            <td>{{ resBySD.username }}</td>
+                            <td>{{ resBySD.number }}</td>
+                            <td>{{ resBySD.start_date ? resBySD.start_date|date('Y-m-d') : '' }}</td>
+                            <td>{{ resBySD.end_date ? resBySD.end_date|date('Y-m-d') : '' }}</td>
+                            <td>{{ resBySD.boat_name }}</td>
+                            <td>{{ resBySD.key_number }}</td>
+
                             <td>
 {#                                <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>#}
-                                <a href="{{ path('app_place_crud_edit', {'id': place.id}) }}">Edytuj</a>
+                                <a href="{{ path('app_place_crud_edit', {'id': resBySD.id}) }}">Edytuj</a>
                             </td>
+
                         </tr>
                     {% endfor %}
                 {% else %}
+
+
+
+
+
+
                     <tr>
                         <td colspan="6">Brak rezerwacji w bazie</td>
                     </tr>
@@ -121,6 +146,9 @@
                 <button class="contact__form-btn btn-special-animation spacer">Zmień dane</button>
             </a>
         {% endif %}
+            <a href="{{ path('app_places') }}">
+                <button class="contact__form-btn btn-special-animation spacer">Mapa sytuacyjna</button>
+            </a>
         </div>
     </div>
 {% endblock %}

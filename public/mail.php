@@ -9,7 +9,8 @@ $txt ="Imię: ". $name . "\nEmail: " . $email . "\nWiadomość:\n" . $message;
 $headers = "From: noreply@marina-best.pl";
 if($email!=NULL){
     mail($to,$subject,$txt,$headers);
+    header("Location: https://marina-best.pl/emailtnx");
 }
-//redirect
-header("Location: https://marina-best.pl/emailtnx");
+//redirect no mail
+header("Location: https://marina-best.pl/emailfail");
 ?>

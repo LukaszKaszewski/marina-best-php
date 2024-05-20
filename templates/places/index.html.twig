@@ -9,5 +9,16 @@
             alt="plan mariny"
             class="places__map"
     />
+
+    <div>
+        <a href="{{ path('app_index') }}">
+            <button class="contact__form-btn btn-special-animation spacer">Strona główna</button>
+        </a>
+        {% if is_granted('ROLE_USER') %}
+            <a href="{{ path('app_place_crud_index') }}">
+                <button class="contact__form-btn btn-special-animation spacer">Panel użytkownika</button>
+            </a>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}

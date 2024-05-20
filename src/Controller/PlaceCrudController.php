@@ -32,12 +32,14 @@ class PlaceCrudController extends AbstractController
         $user = $this->getUser();
 
         $reservation = $placeRepository->reservation();
+        $reservationBySD = $placeRepository->reservationByStartDate();
 
         return $this->render('place_crud/index.html.twig', [
             'places' => $placeRepository->findAll(),
             'user' => $user,
             // show reservation
-            'reservation' => $reservation
+            'reservation' => $reservation,
+            'reservationBySD' => $reservationBySD
         ]);
     }
 

@@ -61,6 +61,18 @@ class PlaceRepository extends ServiceEntityRepository
             ->getResult();
         }
 
+    public function reservationByStartDate()
+    {
+        // search reservation by start date
+        return $this->createQueryBuilder('p')
+            ->select('p.id', 'p.start_date', 'p.end_date', 'p.number', 'p.boat_name', 'u.username', 'k.key_number')
+            ->join('p.user', 'u')
+            ->join('p.key_number', 'k')
+            ->orderBy('p.start_date', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
     public function checkNewPlaces($sd, $ed, $num)
     {
         // search conflict position

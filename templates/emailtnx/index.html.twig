@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EmailtnxController!{% endblock %}
-
 {% block body %}
 <div class="place">
     <div class="header bgeraser">
@@ -9,7 +7,7 @@
         <a href="{{ path('app_index') }}">
             <button class="contact__form-btn btn-special-animation spacer">Strona główna</button>
         </a>
-        <a href="{{ path('app_panel') }}">
+        <a href="{{ path('app_place_crud_index') }}">
             <button class="contact__form-btn btn-special-animation">Panel użytkownika</button>
         </a>
     </div>

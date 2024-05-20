@@ -16,7 +16,7 @@ class Rfid
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $number = null;
+    private ?string $key_number = null;
 
     #[ORM\Column(length: 255)]
     private ?string $key_code = null;
@@ -36,12 +36,12 @@ class Rfid
 
     public function getNumber(): ?string
     {
-        return $this->number;
+        return $this->key_number;
     }
 
-    public function setNumber(int $number): static
+    public function setNumber(int $key_number): static
     {
-        $this->number = $number;
+        $this->key_number = $key_number;
 
         return $this;
     }

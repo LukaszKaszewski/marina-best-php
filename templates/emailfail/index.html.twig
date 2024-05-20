@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="place">
+        <div class="header bgeraser">
+            <p class="header__text">Przepraszamy, nie udało się wysłać wiadomości</p>
+            <a href="{{ path('app_index') }}">
+                <button class="contact__form-btn btn-special-animation spacer">Strona główna</button>
+            </a>
+            <a href="{{ path('app_place_crud_index') }}">
+                <button class="contact__form-btn btn-special-animation">Panel użytkownika</button>
+            </a>
+        </div>
+    </div>
+{% endblock %}

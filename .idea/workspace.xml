@@ -5,23 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d79ad6-8432-4ed2-b3c9-46d20e4751d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/docs/cennik.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/docs/cennik.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/boat-crane-5195086_1280.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/pexels-frans-van-heerden-201846-655794.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/PaymentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/payment/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20240518160406.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20240518160651.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/EmailfailController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/emailfail/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/_colors.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/mail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PlaceCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PlaceCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Rfid.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Rfid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PlaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PlaceRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emailtnx/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emailtnx/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/place_crud/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/place_crud/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/service/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/wintering/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wintering/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/places/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/places/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +198,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/templates/place_crud&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/templates/emailtnx&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -212,6 +215,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\templates\emailtnx" />
       <recent name="C:\xampp\htdocs\templates\place_crud" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -398,7 +402,16 @@
       <workItem from="1715713859809" duration="848000" />
       <workItem from="1715799777925" duration="6220000" />
       <workItem from="1715868509729" duration="1398000" />
-      <workItem from="1715884911498" duration="9021000" />
+      <workItem from="1715884911498" duration="9097000" />
+      <workItem from="1715972900460" duration="159000" />
+      <workItem from="1715973123275" duration="8795000" />
+      <workItem from="1716042763886" duration="8985000" />
+      <workItem from="1716064644178" duration="29000" />
+      <workItem from="1716064687888" duration="6205000" />
+      <workItem from="1716073448187" duration="4638000" />
+      <workItem from="1716151307817" duration="48000" />
+      <workItem from="1716151369264" duration="3626000" />
+      <workItem from="1716233498912" duration="6970000" />
     </task>
     <servers />
   </component>

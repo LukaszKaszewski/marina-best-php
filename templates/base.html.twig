@@ -7,7 +7,6 @@
         <meta name="keywords" content="zagle, łodzie, morze, jezioro, wakacje" />
         <meta name="author" content="Lukasz Kaszewski" />
         <title>Marina Best</title>
-{#        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">#}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -18,27 +17,15 @@
             <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         {% endblock %}
 
-{#        {% block javascripts %}#}
-{#            {{ importmap() }}#}
-{#            <script#}
-{#                    src="https://kit.fontawesome.com/de872b4021.js"#}
-{#                    crossorigin="anonymous"#}
-{#            ></script>#}
-
-
-{#        {% endblock %}#}
     </head>
     <body>
     <!-- weather 1 -->
     <div class="weather-widget">
-        <a
-                class="weatherwidget-io xxx"
-                href="https://forecast7.com/pl/53d4314d55/szczecin/"
-                data-label_1="Szczecin"
-                data-icons="Climacons Animated"
-                data-days="7"
-                data-theme="weather_one"
-        ></a>
+        <a class="weatherwidget-io"
+           href="https://forecast7.com/pl/53d4314d55/szczecin/"
+           data-label_1="Szczecin"
+           data-icons="Climacons Animated"
+           data-theme="weather_one" >Szczecin</a>
     </div>
 
     <!-- nav button -->
@@ -47,30 +34,23 @@
         <div class="burger-btn__icon"></div>
     </div>
 
-
-
-
-
-
     <!-- nav -->
     <nav class="nav">
         {% if is_granted('ROLE_USER') %}
-            <a href="/userpanel" class="nav__item nav__btn1">Panel użytkownika</a>
+            <a href="{{ path('app_place_crud_index') }}" class="nav__item nav__btn1">Panel użytkownika</a>
             <a href="{{ path('app_index') }}" class="nav__item nav__btn2">Strona główna</a>
             <a href="tel:+48501501501" class="nav__item nav__btn3">Zadzwoń do nas</a>
-            <a href="/#contact" class="nav__item nav__btn4">Napisz do nas</a>
+            <a href="{{ path('app_payment') }}" class="nav__item nav__btn4">Cennik</a>
             <a href="{{ path('app_place') }}" class="nav__item nav__btn5">Wolne miejsca</a>
             <a href="{{ path('app_logout') }}" class="nav__item nav__btn6">Wyloguj się</a>
         {% else %}
             <a href="{{ path('app_login') }}" class="nav__item nav__btn1">Logowanie</a>
-            <a href="/#offer" class="nav__item nav__btn2">Oferta</a>
-            <a href="/#marina-data" class="nav__item nav__btn3">Dane nt mariny</a>
-            <a href="/#price-list" class="nav__item nav__btn4">Cennik</a>
-            <a href="/#news" class="nav__item nav__btn5">Aktualności</a>
-            <a href="{{ path('app_place') }}" class="nav__item nav__btn6">Wolne miejsca</a>
-
+            <a href="#offers" class="nav__item nav__btn2">Oferta</a>
+            <a href="tel:+48501501501" class="nav__item nav__btn3">Zadzwoń do nas</a>
+            <a href="{{ path('app_payment') }}" class="nav__item nav__btn4">Cennik</a>
+            <a href="{{ path('app_place') }}" class="nav__item nav__btn5">Wolne miejsca</a>
+            <a href="{{ path('app_places')}}" class="nav__item nav__btn6">Mapa sytuacyjna</a>
         {% endif %}
-
     </nav>
 
 
@@ -87,19 +67,17 @@
                     <div class="footer__box footer__box-desktop">
                         <h3 class="footer__box-title">Na skróty</h3>
                         <ul class="footer__box-list">
-                            <li class="footer__box-list-item"><a href="#">Regulamin</a></li>
+                            <li class="footer__box-list-item"><a href="#">Rejestracja</a></li>
+                            <li class="footer__box-list-item"><a href="#">Logowanie</a></li>
                             <li class="footer__box-list-item"><a href="#">Cennik</a></li>
-                            <li class="footer__box-list-item"><a href="#">3</a></li>
-                            <li class="footer__box-list-item"><a href="#">4</a></li>
                         </ul>
                     </div>
                     <div class="footer__box footer__box-desktop">
                         <h3 class="footer__box-title">Na skróty</h3>
                         <ul class="footer__box-list">
-                            <li class="footer__box-list-item"><a href="#">5</a></li>
-                            <li class="footer__box-list-item"><a href="#">6</a></li>
-                            <li class="footer__box-list-item"><a href="#">7</a></li>
-                            <li class="footer__box-list-item"><a href="#">8</a></li>
+                            <li class="footer__box-list-item"><a href="#">Wolne miejsca</a></li>
+                            <li class="footer__box-list-item"><a href="#">Mapa sytuacyjna</a></li>
+                            <li class="footer__box-list-item"><a href="#">Regulamin</a></li>
                         </ul>
                     </div>
                 </div>
