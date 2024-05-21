@@ -12,6 +12,8 @@
             <button class="contact__form-btn btn-special-animation spacer">Powrót</button>
         </a>
 
-{#        {{ include('user/_delete_form.html.twig') }}#}
+        {% if is_granted('ROLE_ADMIN') %}
+            {{ include('user/_delete_form.html.twig') }}
+        {% endif %}
     </div>
 {% endblock %}

@@ -16,6 +16,13 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 #[isGranted('ROLE_USER')]
 class UserController extends AbstractController
 {
+    private $createdAt;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
+
     #[Route('/', name: 'app_user_index', methods: ['GET'])]
     public function index(UserRepository $userRepository): Response
     {
@@ -31,6 +38,8 @@ class UserController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
+        $user->setCreatedAt(new \DateTimeImmutable());
+
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 

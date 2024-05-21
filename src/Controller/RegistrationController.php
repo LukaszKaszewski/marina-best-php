@@ -24,7 +24,6 @@ class RegistrationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             try {
-                // encode the plain password
                 $user->setCreatedAt(new \DateTimeImmutable());
                 $user->setRoles(['ROLE_USER']);
                 $user->setPassword(
@@ -37,14 +36,11 @@ class RegistrationController extends AbstractController
                 $entityManager->persist($user);
                 $entityManager->flush();
 
-                // do anything else you need here, like send an email
                 return $this->redirectToRoute('app_login');
             } catch (\Doctrine\DBAL\Exception\UniqueConstraintViolationException $e) {
-                // Obsługa błędu naruszenia unikalności (duplikat)
-                // Możesz dodać tutaj logikę do obsługi komunikatu dla użytkownika
+                // email need to be unique
                 $this->addFlash('error', 'Podany email jest już zajęty');
             } catch (\Exception $e) {
-                // Obsługa innych rodzajów błędów
                 $this->addFlash('error', 'Error: ' . $e->getMessage());
             }
 

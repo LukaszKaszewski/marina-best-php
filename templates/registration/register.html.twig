@@ -6,7 +6,6 @@
     <div class="place">
         <h1 class="title">Rejestracja</h1>
 
-
         {{ form_errors(registrationForm) }}
         {{ form_start(registrationForm) }}
         <div class="reg_form">
@@ -27,10 +26,12 @@
         <div class="reg_form">
             {{ form_row(registrationForm.phone) }}
         </div>
+        <div>
+            <a href="{{ path('app_terms') }}" class="nav__item" target="_blank">Regulamin</a>
+        </div>
         <div class="reg_form--terms">
             {{ form_row(registrationForm.agreeTerms) }}
         </div>
-
         <button type="submit" class="contact__form-btn btn-special-animation spacer">Zarejestruj</button>
         {{ form_end(registrationForm) }}
 

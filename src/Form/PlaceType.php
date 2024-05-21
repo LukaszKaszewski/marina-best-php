@@ -19,13 +19,13 @@ class PlaceType extends AbstractType
             ->add('start_date', DateType::class, [
                 'format' => 'dd MMMM y', // Ustaw format daty
                 'label' => 'Data początkowa', // Ustaw etykietę pola
-                'attr' => ['class' => 'datepicker'], // Dodaj klasę, jeśli potrzebujesz stylizacji
+                'attr' => ['class' => 'datepicker'], // class to style the field
 
             ])
             ->add('end_date', DateType::class, [
                 'format' => 'dd MMMM y', // Ustaw format daty
                 'label' => 'Data zakończenia postoju', // Ustaw etykietę pola
-                'attr' => ['class' => 'datepicker'], // Dodaj klasę, jeśli potrzebujesz stylizacji
+                'attr' => ['class' => 'datepicker'], // class to style the field
             ]);
         ;
     }

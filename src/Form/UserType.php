@@ -65,13 +65,15 @@ class UserType extends AbstractType
             ])
             ->add('created_at', null, [
                 'label' => 'Data utworzenia: ',
+                'html5' => false, // HTML5 off, format error
+                'format' => 'dd MMMM y HH mm',
                 // add style to hide field if user is not admin
                 'attr' => [
                     'style' => !$isAdmin ? 'display: none;' : ''
                 ],
                 'label_attr' => [
                     'style' => !$isAdmin ? 'display: none;' : ''
-                ]
+                ],
             ])
             ->add('phone', null, [
                 'label' => 'Numer telefonu: ',
