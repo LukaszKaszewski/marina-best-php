@@ -160,9 +160,6 @@ class PlaceCrudController extends AbstractController
                     }
                 }
             }
-//            $entityManager->flush();
-
-            // after flush() back to index
             return $this->redirectToRoute('app_place_crud_index', [], Response::HTTP_SEE_OTHER);
         }
 

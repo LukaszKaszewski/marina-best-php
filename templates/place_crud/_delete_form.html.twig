@@ -1,4 +1,4 @@
-<form method="post" action="{{ path('app_place_crud_delete', {'id': place.id}) }}" onsubmit="return confirm('Jestes pewien że chcesz skasować ten wpis?');">
+<form method="post" action="{{ path('app_place_crud_delete', {'id': place.id}) }}" onsubmit="return confirm('Jesteś pewien że chcesz skasować ten wpis?');">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ place.id) }}">
     <button class="contact__form-btn btn-special-animation spacer">Usuń wpis</button>
 </form>

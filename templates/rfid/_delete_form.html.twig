@@ -1,4 +1,4 @@
-<form method="post" action="{{ path('app_rfid_delete', {'id': rfid.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+<form method="post" action="{{ path('app_rfid_delete', {'id': rfid.id}) }}" onsubmit="return confirm('Jesteś pewien że chcesz skasowac ten wpis?');">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ rfid.id) }}">
     <button class="contact__form-btn btn-special-animation spacer">Usuń wpis</button>
 </form>

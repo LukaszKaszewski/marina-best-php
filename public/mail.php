@@ -10,7 +10,8 @@ $headers = "From: noreply@marina-best.pl";
 if($email!=NULL){
     mail($to,$subject,$txt,$headers);
     header("Location: https://marina-best.pl/emailtnx");
+} else {
+    //redirect no mail
+    header("Location: https://marina-best.pl/emailfail");
 }
-//redirect no mail
-header("Location: https://marina-best.pl/emailfail");
 ?>

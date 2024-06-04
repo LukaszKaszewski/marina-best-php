@@ -223,6 +223,12 @@ body {
   background-attachment: fixed;
   background-attachment: scroll;
 }
+.header__info {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  color: #00ffaa;
+}
 .header__heading {
   font-family: "Dancing Script", cursive;
   font-size: 3.5rem;
@@ -694,6 +700,7 @@ body {
 #rfid {
   padding: 0.5em;
   background-color: rgba(47, 40, 40, 0.75);
+  border-radius: 7px;
 }
 .reg_form label,
 #place1 label,
@@ -714,6 +721,14 @@ body {
   border-radius: 7px;
   min-width: 250px;
   height: 2em;
+}
+.reg_form div,
+#place1 div,
+#service div,
+#wintering div,
+#user div,
+#rfid div {
+  padding: 0.5em 0;
 }
 .reg_form--terms div,
 #place1--terms div,
@@ -740,6 +755,14 @@ body {
   border-radius: 7px;
   min-width: 250px;
   height: 2em;
+}
+.login_form:first-child {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.login_form:nth-child(2) {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 
 .spacer {

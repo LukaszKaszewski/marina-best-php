@@ -19,23 +19,6 @@
                 </tr>
             </thead>
             <tbody>
-{#                {% if places is not empty %}#}
-{#                    {% for place in places %}#}
-{#                        <tr>#}
-{#                            <td>{{ place.userId.username }}</td>#}
-{#                            <td>{{ place.number }}</td>#}
-{#                            <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>#}
-{#                            <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>#}
-{#                            <td>{{ place.boatName }}</td>#}
-{#                            <td>{{ place.keyNumber is not null ? place.keyNumber.number : '---' }}</td> #}{# if null, show nothing #}
-{#                            <td>#}
-{#                                <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>#}
-{#                                <a href="{{ path('app_place_crud_edit', {'id': place.id}) }}">Edytuj</a>#}
-{#                            </td>#}
-{#                        </tr>#}
-{#                    {% endfor %}#}
-{#                {% else %}#}
-
                 {% if reservationBySD is not empty %}
                     {% for resBySD in reservationBySD %}
                         <tr>
@@ -45,28 +28,17 @@
                             <td>{{ resBySD.end_date ? resBySD.end_date|date('Y-m-d') : '' }}</td>
                             <td>{{ resBySD.boat_name }}</td>
                             <td>{{ resBySD.key_number }}</td>
-
                             <td>
-{#                                <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>#}
                                 <a href="{{ path('app_place_crud_edit', {'id': resBySD.id}) }}">Edytuj</a>
                             </td>
-
                         </tr>
                     {% endfor %}
                 {% else %}
-
-
-
-
-
-
                     <tr>
                         <td colspan="6">Brak rezerwacji w bazie</td>
                     </tr>
                 {% endif %}
-
             </tbody>
-
         </table>
         {# errors from PlaceCrudcontroller       #}
         {% for flashError in app.flashes('error') %}
@@ -76,52 +48,51 @@
         {% endfor %}
     {% else %}
         <table class="tile">
-            {% if places is not empty %}
+        {% if places is not empty %}
             {% set hasUserPlaces = false %}
-            {% for place in places %}
-            {% if user.username == place.userId.username %}
-            {% set hasUserPlaces = true %}
-            <thead>
-                <tr>
-                    <th>Nr miejsca</th>
-                    <th>Początek postoju</th>
-                    <th>Koniec postoju</th>
-                    <th>Nazwa jednostki</th>
-                    <th> </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{ place.number }}</td>
-                    <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>
-                    <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>
-                    <td>{{ place.boatName }}</td>
-                    <td>
-{#                                <a href="{{ path('app_place_crud_show', {'id': place.id}) }}">Pokaż</a>#}
-                        <a href="{{ path('app_place_crud_edit', {'id': place.id}) }}">Edytuj</a>
-                    </td>
-                </tr>
+                {% for place in places %}
+                    {% if user.username == place.userId.username %}
+                    {% set hasUserPlaces = true %}
+                    <thead>
+                        <tr>
+                            <th>Nr miejsca</th>
+                            <th>Początek postoju</th>
+                            <th>Koniec postoju</th>
+                            <th>Nazwa jednostki</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>{{ place.number }}</td>
+                        <td>{{ place.startDate ? place.startDate|date('Y-m-d') : '' }}</td>
+                        <td>{{ place.endDate ? place.endDate|date('Y-m-d') : '' }}</td>
+                        <td>{{ place.boatName }}</td>
+                        <td>
+                            <a href="{{ path('app_place_crud_edit', {'id': place.id}) }}">Edytuj</a>
+                        </td>
+                    </tr>
                     {% endif %}
                 {% endfor %}
-                {% if not hasUserPlaces %}
-                    <tr>
-                        <td colspan="6">Nie masz żadnych rezerwacji</td>
-                    </tr>
-                {% endif %}
-            {% else %}
+            {% if not hasUserPlaces %}
                 <tr>
-                    <td colspan="6">Brak rezerwacji w bazie</td>
+                    <td colspan="6">Nie masz żadnych rezerwacji</td>
                 </tr>
             {% endif %}
-            </tbody>
+        {% else %}
+            <tr>
+                <td colspan="6">Brak rezerwacji w bazie</td>
+            </tr>
+        {% endif %}
+        </tbody>
         </table>
-        {# errors from PlaceCrudcontroller       #}
-        {% for flashError in app.flashes('error') %}
-            <div class="flash-error">
-                {{ flashError }}
-            </div>
-        {% endfor %}
-    {% endif %}
+            {# errors from PlaceCrudcontroller       #}
+            {% for flashError in app.flashes('error') %}
+                <div class="flash-error">
+                    {{ flashError }}
+                </div>
+            {% endfor %}
+        {% endif %}
 
         <div>
         <a href="{{ path('app_place_crud_new') }}">
@@ -148,6 +119,9 @@
         {% endif %}
             <a href="{{ path('app_places') }}">
                 <button class="contact__form-btn btn-special-animation spacer">Mapa sytuacyjna</button>
+            </a>
+            <a href="{{ path('app_index') }}">
+                <button class="contact__form-btn btn-special-animation spacer">Strona główna</button>
             </a>
         </div>
     </div>

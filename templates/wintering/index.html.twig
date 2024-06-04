@@ -32,7 +32,6 @@
                             <td>{{ wintering.endDate ? wintering.endDate|date('Y-m-d') : '' }}</td>
                             <td>{{ wintering.description }}</td>
                             <td>
-{#                                <a href="{{ path('app_wintering_show', {'id': wintering.id}) }}">Pokaż</a>#}
                                 <a href="{{ path('app_wintering_edit', {'id': wintering.id}) }}">Edytuj</a>
                             </td>
                         </tr>
@@ -95,7 +94,7 @@
             </div>
         {% endfor %}
         <a href="{{ path('app_wintering_new') }}">
-            <button class="contact__form-btn btn-special-animation spacer">Zamów</button>
+            <button class="contact__form-btn btn-special-animation spacer">Zamów zimowanie</button>
         </a>
         <a href="{{ path('app_place_crud_index') }}">
             <button class="contact__form-btn btn-special-animation spacer">Panel użytkownika</button>

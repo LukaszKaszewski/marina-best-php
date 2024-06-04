@@ -10,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/user')]
@@ -18,9 +20,10 @@ class UserController extends AbstractController
 {
     private $createdAt;
 
-    public function __construct()
+    public function __construct(Security $security)
     {
         $this->createdAt = new \DateTimeImmutable();
+        $this->security = $security;
     }
 
     #[Route('/', name: 'app_user_index', methods: ['GET'])]
@@ -92,4 +95,5 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }

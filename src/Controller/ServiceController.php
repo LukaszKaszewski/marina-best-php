@@ -61,7 +61,7 @@ class ServiceController extends AbstractController
                 $entityManager->flush();
             } else {
                 if($startDate <= $currentDate) {
-                    $this->addFlash('error', 'Błąd: data początkowa nie może być w przeszłości');
+                    $this->addFlash('error', 'Błąd: data usługi nie może być w przeszłości');
                 } else {
                     $entityManager->persist($service);
                     $entityManager->flush();

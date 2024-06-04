@@ -2,17 +2,24 @@
 
 {% block body %}
 <body>
-
-
-
 <!-- header and main site -->
 <header class="header section">
+    {% if is_granted('ROLE_USER') %}
+        <h2 class="header__info">Zalogowany: {{ user.username }}</h2>
+    {% endif %}
     <h1 class="header__heading">Marina B E S T</h1>
     <p class="header__text">Wyjątkowe miejsce na Twoje wyjątkowe wakacje</p>
     <a href="#offers" class="header__btn btn-special-animation"
-    >Nasza oferta</a
-    >
-    <!-- <div class="white-block white-block-left"></div> -->
+    >Nasza oferta</a>
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('app_place_crud_index') }}" class="header__btn btn-special-animation"
+        >panel użytkownika</a>
+    {% else %}
+        <a href="{{ path('app_login') }}" class="header__btn btn-special-animation"
+        >logowanie</a>
+    {% endif %}
+
+{#    <div class="white-block white-block-left"></div>#}
 </header>
 
 
@@ -59,11 +66,11 @@
                     <p class="offers__text">
                         Houseboat jest małą jednostką pływającą o niewielkim zanurzeniu.
                         Nasze jednostki wyposażone są w silnik spalinowy niewielkiej mocy,
-                        co daje możliwość przemieszczania się pomiędzy marinami, ktore
+                        co daje możliwość przemieszczania się pomiędzy marinami, które
                         znajdują się w niewielkich odległościach od siebie. Każdy Houseboat
                         jest w pełni funkcjonalnym lokum na którym można spędzić wymarzone wakacje.
                         Dla zapewnienia odpowiedniego komfortu do dyspozycji gości jest: sypialnia,
-                        salon, łazienka z prysznicem oraz niewielki taras na którym można spedzić
+                        salon, łazienka z prysznicem oraz niewielki taras na którym można spędzić
                         niezapomnaine zachody słońca.
                     </p>
                 </div>
@@ -172,7 +179,7 @@
                     <div class="price__card-img price__card-img--second">
                         <h3 class="price__card-img-title">Duże miejsca</h3>
                         <p class="price__card-info-list-itemTop">Przeznaczone dla jednostek o maksymalnych wymiarach do 12 metrów długości oraz
-                        6 metrów szerokości</p>
+                        6 metrów szerokości.</p>
                         <p class="price__card-img-info">
                             <i class="fas fa-angle-double-right"></i>
                         </p>
@@ -194,8 +201,8 @@
                 <div class="price__card" onclick="void(0)">
                     <div class="price__card-img price__card-img--third">
                         <h3 class="price__card-img-title">Houseboat</h3>
-                        <p class="price__card-info-list-itemTop">Male jednostki pływające służące głównie do postoju w porcie.
-                            Za główną zaletę mające w pełni funkcjonalne wyposażenie. Jednym słowem - pływający dom.</p>
+                        <p class="price__card-info-list-itemTop">Małe jednostki pływające służące głównie do postoju w porcie.
+                            Główną zaletą jest w pełni funkcjonalne wyposażenie. Jednym słowem - pływający dom.</p>
                         <p class="price__card-img-info">
                             <i class="fas fa-angle-double-right"></i>
                         </p>
@@ -300,7 +307,7 @@
     </section>
 
     <section class="contact section-padding section white-section" id="contact">
-        <h2 class="section-heading">Formularz kontakowy</h2>
+        <h2 class="section-heading">Formularz kontaktowy</h2>
         <div class="wrapper">
             <form action="mail.php" method="post" class="contact__form">
                 <div class="contact__form-top">

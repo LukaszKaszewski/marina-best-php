@@ -5,25 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47d79ad6-8432-4ed2-b3c9-46d20e4751d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/docs/terms.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/TermsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/terms/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240130221056.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240204222339.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240204222620.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240212205019.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240215205331.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240215205421.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240215211159.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240215211311.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240218211938.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240218213605.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240222222855.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240224221204.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240224231457.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240225203725.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240225222519.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240227221806.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20240527203748.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240302224441.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240321213344.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240321213437.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240322212140.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240518160406.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20240518160651.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/docs/cennik.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/docs/cennik.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/docs/cennik.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PlaceCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PlaceCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ServiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PlaceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PlaceType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Rfid.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Rfid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ServiceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ServiceType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/place_crud/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/place_crud/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/place_crud/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/place_crud/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rfid/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rfid/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rfid/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/rfid/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/wintering/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wintering/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/wintering/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wintering/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,6 +219,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -415,6 +442,23 @@
       <workItem from="1716308247757" duration="1787000" />
       <workItem from="1716312100834" duration="130000" />
       <workItem from="1716313647921" duration="12724000" />
+      <workItem from="1716328132658" duration="179000" />
+      <workItem from="1716401520275" duration="157000" />
+      <workItem from="1716401696017" duration="11427000" />
+      <workItem from="1716486229234" duration="36000" />
+      <workItem from="1716494095013" duration="30000" />
+      <workItem from="1716494138486" duration="955000" />
+      <workItem from="1716490519354" duration="596000" />
+      <workItem from="1716580055592" duration="855000" />
+      <workItem from="1716630324273" duration="28000" />
+      <workItem from="1716630652897" duration="13794000" />
+      <workItem from="1716749440807" duration="234000" />
+      <workItem from="1716749687470" duration="4329000" />
+      <workItem from="1716838164227" duration="3512000" />
+      <workItem from="1717011380573" duration="648000" />
+      <workItem from="1717101972728" duration="61000" />
+      <workItem from="1717102054605" duration="3124000" />
+      <workItem from="1717528419097" duration="2770000" />
     </task>
     <servers />
   </component>
