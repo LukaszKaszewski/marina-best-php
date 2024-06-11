@@ -1,43 +1,23 @@
 $main-color: #1755e7;
-$secondary-color: #164dcc;
-$pure-white: #fff;
+$second-color: #164dcc;
+$white: #fff;
 $light-white: #eee;
-$dark: #3d3d3d;
-$green-color: #00ffaa;
-$green-color-hover: #0fe29c;
+$dark: #3e3e3e;
+$green: #00ffaa;
 
 // main site
-$dark-gradient: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+$dark-gradient: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75));
 
 // price cards
-$dark-blue-gradient-solid: radial-gradient(
+$dark-blue-gradient: radial-gradient(
 	circle at top right,
-	rgb(0, 60, 199) 0%,
-	rgb(0, 81, 97) 100%
+	rgb(0, 70, 200) 0%,
+	rgb(0, 91, 97) 100%
 );
 
 // nav
 $blue-gradient-solid: linear-gradient(
 	45deg,
-	rgb(38, 102, 206),
-	rgb(45, 33, 100)
+	rgb(50, 102, 210),
+	rgb(45, 40, 100)
 );
-
-
-
-
-
-
-$light-blue-gradient: linear-gradient(
-	45deg,
-	rgba(8, 206, 255, 0.75),
-	rgba(8, 24, 255, 0.75)
-);
-
-$purple-gradient: linear-gradient(
-	45deg,
-	rgba(190, 10, 214, 0.75),
-	rgba(68, 0, 255, 0.75)
-);
-
-

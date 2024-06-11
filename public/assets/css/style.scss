@@ -126,7 +126,7 @@ body {
 		padding: 0.5em 2em;
 		font-size: 2rem;
 		text-decoration: none;
-		color: $pure-white;
+		color: $white;
 		z-index: 0;
 
 		&::before {
@@ -158,7 +158,7 @@ body {
 		}
 
 		&:hover {
-			color: $secondary-color;
+			color: $second-color;
 		}
 
 		&:hover::before,
@@ -206,7 +206,7 @@ body {
 	padding: 2em;
 	height: 100vh; // 75
 	text-align: center;
-	color: $pure-white;
+	color: $white;
 	@include heroImages("../img/chiayi_port_1920.jpg");
 	background-attachment: scroll;
 
@@ -214,7 +214,7 @@ body {
 		position: absolute;
 		top: 0.5em;
 		left: 0.5em;
-		color: $green-color;
+		color: $green;
 	}
 
 	&__heading {
@@ -233,7 +233,7 @@ body {
 		margin-top: 2em;
 		padding: 0.8em 1.6em;
 		font-size: 1.4rem;
-		background-color: $pure-white;
+		background-color: $white;
 		border: none;
 		border-radius: 8px;
 		color: $dark;
@@ -306,7 +306,7 @@ body {
 	padding: 10em 2em;
 	@include heroImages("../img/boats_640.jpg");
 	text-align: center;
-	color: $pure-white;
+	color: $white;
 
 	&__title {
 		font-family: "Dancing Script", cursive;
@@ -325,7 +325,7 @@ body {
 		position: relative;
 		margin: 1em 0;
 		height: 500px;
-		color: $pure-white;
+		color: $white;
 		text-align: center;
 		// pict depth
 		perspective: 1500px;
@@ -348,7 +348,7 @@ body {
 			height: 100%;
 			border-radius: 6px;
 			background-size: cover;
-			transition: transform 1.5s, opacity 1.5s;
+			transition: transform 1.6s, opacity 1.5s;
 			background-size: cover;
 			background-position: center;
 
@@ -392,7 +392,7 @@ body {
 			bottom: 0;
 			left: 0;
 			border-radius: 6px;
-			background-image: $dark-blue-gradient-solid;
+			background-image: $dark-blue-gradient;
 			transform: rotateY(180deg);
 			opacity: 0;
 			transition: transform 1.5s, opacity 1.5s;
@@ -447,7 +447,7 @@ body {
 				border: none;
 				background-color: rgb(170, 9, 170);
 				cursor: pointer;
-				color: $pure-white;
+				color: $white;
 
 				&::before {
 					background-color: yellow;
@@ -469,13 +469,13 @@ body {
 	@include heroImages("../img/news_640.jpg");
 
 	.section-heading {
-		color: $pure-white;
+		color: $white;
 	}
 
 	&__option {
 		margin: 1em 0;
 		box-shadow: 5px 5px 10px rgba(50, 50, 50, 0.16);
-		background-color: $pure-white;
+		background-color: $white;
 		overflow: hidden;
 		border-radius: 8px;
 
@@ -512,7 +512,7 @@ body {
 			margin-top: 1rem;
 			padding: 0.9em;
 			width: 100%;
-			color: $pure-white;
+			color: $white;
 			background-color: $main-color;
 			border: none;
 			border-radius: 7px;
@@ -564,7 +564,7 @@ body {
 		padding: 1em;
 		width: 13em;
 		//max-width: 250px;
-		color: $pure-white;
+		color: $white;
 		border: none;
 		border-radius: 8px;
 		background-color: $main-color;
@@ -580,7 +580,7 @@ body {
 // footer
 
 .footer {
-	color: $pure-white;
+	color: $white;
 	background-color: rgb(65, 65, 65);
 
 	.wrapper {
@@ -616,7 +616,7 @@ body {
 	padding: 2em;
 	height: auto; // 100
 	text-align: center;
-	color: $pure-white;
+	color: $white;
 	@include heroImages("../img/chiayi_port_1920.jpg");
 	background-attachment: scroll;
 
@@ -675,7 +675,7 @@ body {
 		font-weight: bold;
 		padding: 0 0.3em;
 		text-decoration: none;
-		color: $pure-white;
+		color: $white;
 	}
 
 	~ a {
@@ -732,7 +732,7 @@ body {
 		}
 
 		a {
-			color: $green-color;
+			color: $green;
 		}
 
 
@@ -748,7 +748,7 @@ body {
 		a {
 			//border: 1px solid white;
 			border-radius: 3px;
-			background-color: $secondary-color;
+			background-color: $second-color;
 			padding: 0.2em;
 			margin: 0 0.2em;
 		}
@@ -802,7 +802,7 @@ body {
 	label {
 		display: flex;
 		justify-content: center;
-		color: $pure-white;
+		color: $white;
 	}
 
 	input {
@@ -839,7 +839,7 @@ body {
 	label {
 		display: flex;
 		justify-content: center;
-		color: $pure-white;
+		color: $white;
 	}
 
 	input {
@@ -1105,7 +1105,7 @@ body {
 
 		label {
 			justify-content: center;
-			color: $pure-white;
+			color: $white;
 		}
 
 		input {
@@ -1278,12 +1278,12 @@ body {
 			a {
 				padding: 0.2em;
 				text-decoration: none;
-				color: $pure-white;
+				color: $white;
 				font-size:2.3rem;
 				transition: all 0.5s ease-in-out;
 				position: relative;
 				text-transform: uppercase;
-				border: 1px solid $pure-white;
+				border: 1px solid $white;
 				border-radius: 7px;
 
 				&:hover {
@@ -1295,6 +1295,6 @@ body {
 	}
 }
 
-.xxx {
+.footnote {
 	color: transparent;
 }
